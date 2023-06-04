@@ -1,0 +1,465 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Struct AffineTransform
+ </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Struct AffineTransform
+ ">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform">
+
+
+
+  <h1 id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform" class="text-break">Struct AffineTransform
+</h1>
+  <div class="markdown level0 summary"><p>Represents an affine transform in 3D space, with two mutually exclusive representantions:<br><ul><li>
+As a 4x3 Matrix. When <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.IsMatrix.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_IsMatrix">IsMatrix</a> is true.<br>
+Publicly exposed as <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.Matrix.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_Matrix">Matrix</a>.
+</li><li>
+As a Scale/Rotation/Translation chain. When <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.IsSRT.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_IsSRT">IsSRT</a> is true.<br>
+Publicly exposed as: <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.Scale.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_Scale">Scale</a>, <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.Rotation.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_Rotation">Rotation</a>, <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.Translation.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_Translation">Translation</a>.
+</li></ul>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.html">AffineTransform</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.tostring">ValueType.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Aspose.html">Aspose</a>.<a class="xref" href="Aspose.CAD.html">CAD</a>.<a class="xref" href="Aspose.CAD.FileFormats.html">FileFormats</a>.<a class="xref" href="Aspose.CAD.FileFormats.GLB.html">GLB</a>.<a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.html">Transforms</a></h6>
+  <h6><strong>Assembly</strong>: Aspose.CAD.dll</h6>
+  <h5 id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly struct AffineTransform : IEquatable&lt;AffineTransform&gt;</code></pre>
+  </div>
+  <h5 id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>
+    Depending on how <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.html">AffineTransform</a> structures are created, the underlaying<br>
+    fields must be interpreted as a Matrix4x3 or a Scale/Rotation/Translation chain.
+    </p>
+<p>
+    This approach allows <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.html">AffineTransform</a> preserving the source transform, avoiding loosing<br>
+    precission when decomposing a matrix, or creating a matrix from a SRT chain.
+    </p>
+<p>
+    Decomposing matrices is tricky because not all valid matrices can be decomposed; in particular<br>
+    squewed matrices will fail to decompose.
+    </p>
+</div>
+  <h3 id="constructors">Constructors
+</h3>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__ctor_System_Nullable_System_Numerics_Vector3__System_Nullable_System_Numerics_Quaternion__System_Nullable_System_Numerics_Vector3__" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.#ctor(System.Nullable{System.Numerics.Vector3},System.Nullable{System.Numerics.Quaternion},System.Nullable{System.Numerics.Vector3})">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.-ctor.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__ctor_System_Nullable_System_Numerics_Vector3__System_Nullable_System_Numerics_Quaternion__System_Nullable_System_Numerics_Vector3__">AffineTransform(Vector3?, Quaternion?, Vector3?)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__ctor_System_Numerics_Matrix4x4_" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.#ctor(System.Numerics.Matrix4x4)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.-ctor.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__ctor_System_Numerics_Matrix4x4_">AffineTransform(Matrix4x4)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__ctor_System_Numerics_Quaternion_" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.#ctor(System.Numerics.Quaternion)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.-ctor.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__ctor_System_Numerics_Quaternion_">AffineTransform(Quaternion)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__ctor_System_Numerics_Quaternion_System_Numerics_Vector3_" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.#ctor(System.Numerics.Quaternion,System.Numerics.Vector3)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.-ctor.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__ctor_System_Numerics_Quaternion_System_Numerics_Vector3_">AffineTransform(Quaternion, Vector3)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__ctor_System_Numerics_Vector3_System_Numerics_Quaternion_System_Numerics_Vector3_" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.#ctor(System.Numerics.Vector3,System.Numerics.Quaternion,System.Numerics.Vector3)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.-ctor.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__ctor_System_Numerics_Vector3_System_Numerics_Quaternion_System_Numerics_Vector3_">AffineTransform(Vector3, Quaternion, Vector3)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+</h3>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_Identity" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.Identity">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.Identity.html">Identity</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_IsIdentity" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.IsIdentity">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.IsIdentity.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_IsIdentity">IsIdentity</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_IsLosslessDecomposable" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.IsLosslessDecomposable">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.IsLosslessDecomposable.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_IsLosslessDecomposable">IsLosslessDecomposable</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a value indicating whether this transform can be decomposed to SRT without precission loss.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_IsMatrix" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.IsMatrix">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.IsMatrix.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_IsMatrix">IsMatrix</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a value indicating whether this <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.html">AffineTransform</a> represents a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.matrix4x4">Matrix4x4</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_IsSRT" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.IsSRT">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.IsSRT.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_IsSRT">IsSRT</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a value indicating whether this <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.html">AffineTransform</a> represents a SRT chain.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_IsValid" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.IsValid">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.IsValid.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_IsValid">IsValid</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_Matrix" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.Matrix">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.Matrix.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_Matrix">Matrix</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.matrix4x4">Matrix4x4</a> transform of the current <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.html">AffineTransform</a></p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_Rotation" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.Rotation">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.Rotation.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_Rotation">Rotation</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the rotation.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_Scale" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.Scale">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.Scale.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_Scale">Scale</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the scale.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_Translation" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.Translation">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.Translation.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_Translation">Translation</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the translation</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_AreGeometricallyEquivalent_Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__System_Single_" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.AreGeometricallyEquivalent(Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform@,Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform@,System.Single)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.AreGeometricallyEquivalent.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_AreGeometricallyEquivalent_Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__System_Single_">AreGeometricallyEquivalent(in AffineTransform, in AffineTransform, float)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Checks whether two transform represent the same geometric spatial transformation.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_Blend_System_ReadOnlySpan_Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__System_ReadOnlySpan_System_Single__" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.Blend(System.ReadOnlySpan{Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform},System.ReadOnlySpan{System.Single})">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.Blend.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_Blend_System_ReadOnlySpan_Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__System_ReadOnlySpan_System_Single__">Blend(ReadOnlySpan&lt;AffineTransform&gt;, ReadOnlySpan&lt;float&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_CreateDecomposed_System_Numerics_Matrix4x4_" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.CreateDecomposed(System.Numerics.Matrix4x4)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.CreateDecomposed.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_CreateDecomposed_System_Numerics_Matrix4x4_">CreateDecomposed(Matrix4x4)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_CreateFromAny_System_Nullable_System_Numerics_Matrix4x4__System_Nullable_System_Numerics_Vector3__System_Nullable_System_Numerics_Quaternion__System_Nullable_System_Numerics_Vector3__" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.CreateFromAny(System.Nullable{System.Numerics.Matrix4x4},System.Nullable{System.Numerics.Vector3},System.Nullable{System.Numerics.Quaternion},System.Nullable{System.Numerics.Vector3})">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.CreateFromAny.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_CreateFromAny_System_Nullable_System_Numerics_Matrix4x4__System_Nullable_System_Numerics_Vector3__System_Nullable_System_Numerics_Quaternion__System_Nullable_System_Numerics_Vector3__">CreateFromAny(Matrix4x4?, Vector3?, Quaternion?, Vector3?)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_Equals_Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.Equals(Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.Equals.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_Equals_Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_">Equals(AffineTransform)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_Equals_System_Object_" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.Equals(System.Object)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.Equals.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_Equals_System_Object_">Equals(object)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_GetDecomposed" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.GetDecomposed">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.GetDecomposed.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_GetDecomposed">GetDecomposed()</a>
+        </td>
+        <td class="markdown level1 summary"><p>If this object represents a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.matrix4x4">Matrix4x4</a>, it returns a decomposed representation.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_GetHashCode" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.GetHashCode">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.GetHashCode.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_GetHashCode">GetHashCode()</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_Multiply_Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.Multiply(Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform@,Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform@)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.Multiply.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_Multiply_Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__">Multiply(in AffineTransform, in AffineTransform)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Multiplies <code class="paramref">a</code> by <code class="paramref">b</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_TransformNormal_System_Numerics_Vector3_Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.TransformNormal(System.Numerics.Vector3,Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform@)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.TransformNormal.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_TransformNormal_System_Numerics_Vector3_Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__">TransformNormal(Vector3, in AffineTransform)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Transforms a vector normal by a specified transform.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_TryDecompose_Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.TryDecompose(Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform@)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.TryDecompose.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_TryDecompose_Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__">TryDecompose(out AffineTransform)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_TryDecompose_System_Numerics_Vector3__System_Numerics_Quaternion__System_Numerics_Vector3__" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.TryDecompose(System.Numerics.Vector3@,System.Numerics.Quaternion@,System.Numerics.Vector3@)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.TryDecompose.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_TryDecompose_System_Numerics_Vector3__System_Numerics_Quaternion__System_Numerics_Vector3__">TryDecompose(out Vector3, out Quaternion, out Vector3)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_TryInvert_Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.TryInvert(Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform@,Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform@)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.TryInvert.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_TryInvert_Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__">TryInvert(in AffineTransform, out AffineTransform)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Inverts the specified transform. The return value indicates whether the operation succeeded.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_WithRotation_System_Numerics_Quaternion_" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.WithRotation(System.Numerics.Quaternion)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.WithRotation.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_WithRotation_System_Numerics_Quaternion_">WithRotation(Quaternion)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_WithScale_System_Numerics_Vector3_" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.WithScale(System.Numerics.Vector3)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.WithScale.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_WithScale_System_Numerics_Vector3_">WithScale(Vector3)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_WithTranslation_System_Numerics_Vector3_" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.WithTranslation(System.Numerics.Vector3)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.WithTranslation.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_WithTranslation_System_Numerics_Vector3_">WithTranslation(Vector3)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
+</h3>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_op_Equality_Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.op_Equality(Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform@,Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform@)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.op_Equality.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_op_Equality_Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__">operator ==(in AffineTransform, in AffineTransform)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_op_Implicit_System_Numerics_Matrix4x4__Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.op_Implicit(System.Numerics.Matrix4x4)~Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.op_Implicit.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_op_Implicit_System_Numerics_Matrix4x4__Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform">implicit operator AffineTransform(Matrix4x4)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_op_Implicit_System_Numerics_Quaternion__Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.op_Implicit(System.Numerics.Quaternion)~Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.op_Implicit.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_op_Implicit_System_Numerics_Quaternion__Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform">implicit operator AffineTransform(Quaternion)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_op_Implicit_System_ValueTuple_System_Numerics_Quaternion_System_Numerics_Vector3___Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.op_Implicit(System.ValueTuple{System.Numerics.Quaternion,System.Numerics.Vector3})~Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.op_Implicit.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_op_Implicit_System_ValueTuple_System_Numerics_Quaternion_System_Numerics_Vector3___Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform">implicit operator AffineTransform((Quaternion r, Vector3 t))</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_op_Inequality_Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.op_Inequality(Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform@,Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform@)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.op_Inequality.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_op_Inequality_Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__">operator !=(in AffineTransform, in AffineTransform)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_op_Multiply_Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__" data-uid="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.op_Multiply(Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform@,Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform@)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Transforms.AffineTransform.op_Multiply.html#Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_op_Multiply_Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform__">operator *(in AffineTransform, in AffineTransform)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+    </tbody>
+  </table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

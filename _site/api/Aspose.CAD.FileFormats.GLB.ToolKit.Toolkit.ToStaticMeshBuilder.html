@@ -1,0 +1,297 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Method ToStaticMeshBuilder
+ </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Method ToStaticMeshBuilder
+ ">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.ToStaticMeshBuilder*">
+
+
+
+<h1 id="Aspose_CAD_FileFormats_GLB_ToolKit_Toolkit_ToStaticMeshBuilder_" data-uid="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.ToStaticMeshBuilder*">Method ToStaticMeshBuilder
+</h1>
+<div class="markdown level0 summary"></div>
+<div class="markdown level0 conceptual"></div>
+
+
+
+<a id="Aspose_CAD_FileFormats_GLB_ToolKit_Toolkit_ToStaticMeshBuilder_" data-uid="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.ToStaticMeshBuilder*"></a>
+<h4 id="Aspose_CAD_FileFormats_GLB_ToolKit_Toolkit_ToStaticMeshBuilder__3_Aspose_CAD_FileFormats_GLB_Scene_System_Converter_Aspose_CAD_FileFormats_GLB_Material___0__Aspose_CAD_FileFormats_GLB_Runtime_RuntimeOptions_Aspose_CAD_FileFormats_GLB_Animation_System_Single_" data-uid="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.ToStaticMeshBuilder``3(Aspose.CAD.FileFormats.GLB.Scene,System.Converter{Aspose.CAD.FileFormats.GLB.Material,``0},Aspose.CAD.FileFormats.GLB.Runtime.RuntimeOptions,Aspose.CAD.FileFormats.GLB.Animation,System.Single)">ToStaticMeshBuilder&lt;TMaterial, TvG, TvM&gt;(Scene, Converter&lt;Material, TMaterial&gt;, RuntimeOptions, Animation, float)</h4>
+<div class="markdown level1 summary"><p>Evaluates the current <code class="paramref">srcScene</code> at a given <code class="paramref">animation</code> and <code class="paramref">time</code>
+and creates a static <a class="xref" href="Aspose.CAD.FileFormats.GLB.Geometry.MeshBuilder-4.html">MeshBuilder&lt;TMaterial, TvG, TvM, TvS&gt;</a></p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<h5 class="declaration">Declaration</h5>
+<div class="codewrapper">
+  <pre><code class="lang-csharp hljs">public static MeshBuilder&lt;TMaterial, TvG, TvM, VertexEmpty&gt; ToStaticMeshBuilder&lt;TMaterial, TvG, TvM&gt;(this Scene srcScene, Converter&lt;Material, TMaterial&gt; materialFunc, RuntimeOptions options, Animation animation, float time) where TvG : struct, IVertexGeometry where TvM : struct, IVertexMaterial</code></pre>
+</div>
+<h5 class="parameters">Parameters</h5>
+<table class="table table-bordered table-condensed">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a class="xref" href="Aspose.CAD.FileFormats.GLB.Scene.html">Scene</a></td>
+      <td><span class="parametername">srcScene</span></td>
+      <td><p>The source <a class="xref" href="Aspose.CAD.FileFormats.GLB.Scene.html">Scene</a> to evaluate.</p>
+</td>
+    </tr>
+    <tr>
+      <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.converter-2">Converter</a>&lt;<a class="xref" href="Aspose.CAD.FileFormats.GLB.Material.html">Material</a>, TMaterial&gt;</td>
+      <td><span class="parametername">materialFunc</span></td>
+      <td><p>A function to convert <a class="xref" href="Aspose.CAD.FileFormats.GLB.Material.html">Material</a> into <code class="typeparamref">TMaterial</code>.</p>
+</td>
+    </tr>
+    <tr>
+      <td><a class="xref" href="Aspose.CAD.FileFormats.GLB.Runtime.RuntimeOptions.html">RuntimeOptions</a></td>
+      <td><span class="parametername">options</span></td>
+      <td><p>Evaluation options.</p>
+</td>
+    </tr>
+    <tr>
+      <td><a class="xref" href="Aspose.CAD.FileFormats.GLB.Animation.html">Animation</a></td>
+      <td><span class="parametername">animation</span></td>
+      <td><p>The source <a class="xref" href="Aspose.CAD.FileFormats.GLB.Animation.html">Animation</a> to evaluate.</p>
+</td>
+    </tr>
+    <tr>
+      <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+      <td><span class="parametername">time</span></td>
+      <td><p>A time point, in seconds, within <code class="paramref">animation</code>.</p>
+</td>
+    </tr>
+  </tbody>
+</table>
+<h5 class="returns">Returns</h5>
+<table class="table table-bordered table-condensed">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a class="xref" href="Aspose.CAD.FileFormats.GLB.Geometry.MeshBuilder-4.html">MeshBuilder</a>&lt;TMaterial, TvG, TvM, <a class="xref" href="Aspose.CAD.FileFormats.GLB.Geometry.VertexTypes.VertexEmpty.html">VertexEmpty</a>&gt;</td>
+      <td><p>A new <a class="xref" href="Aspose.CAD.FileFormats.GLB.Geometry.MeshBuilder-4.html">MeshBuilder&lt;TMaterial, TvG, TvM, TvS&gt;</a> containing the evaluated geometry.</p>
+</td>
+    </tr>
+  </tbody>
+</table>
+<h5 class="typeParameters">Type Parameters</h5>
+<table class="table table-bordered table-condensed">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="parametername">TMaterial</span></td>
+      <td><p>Any material type</p>
+</td>
+    </tr>
+    <tr>
+      <td><span class="parametername">TvG</span></td>
+      <td><p>A subtype of <a class="xref" href="Aspose.CAD.FileFormats.GLB.Geometry.VertexTypes.IVertexGeometry.html">IVertexGeometry</a></p>
+</td>
+    </tr>
+    <tr>
+      <td><span class="parametername">TvM</span></td>
+      <td><p>A subtype of <a class="xref" href="Aspose.CAD.FileFormats.GLB.Geometry.VertexTypes.IVertexMaterial.html">IVertexMaterial</a></p>
+</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<a id="Aspose_CAD_FileFormats_GLB_ToolKit_Toolkit_ToStaticMeshBuilder_" data-uid="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.ToStaticMeshBuilder*"></a>
+<h4 id="Aspose_CAD_FileFormats_GLB_ToolKit_Toolkit_ToStaticMeshBuilder__2_Aspose_CAD_FileFormats_GLB_Scene_Aspose_CAD_FileFormats_GLB_Runtime_RuntimeOptions_Aspose_CAD_FileFormats_GLB_Animation_System_Single_" data-uid="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.ToStaticMeshBuilder``2(Aspose.CAD.FileFormats.GLB.Scene,Aspose.CAD.FileFormats.GLB.Runtime.RuntimeOptions,Aspose.CAD.FileFormats.GLB.Animation,System.Single)">ToStaticMeshBuilder&lt;TvG, TvM&gt;(Scene, RuntimeOptions, Animation, float)</h4>
+<div class="markdown level1 summary"></div>
+<div class="markdown level1 conceptual"></div>
+<h5 class="declaration">Declaration</h5>
+<div class="codewrapper">
+  <pre><code class="lang-csharp hljs">public static MeshBuilder&lt;MaterialBuilder, TvG, TvM, VertexEmpty&gt; ToStaticMeshBuilder&lt;TvG, TvM&gt;(this Scene srcScene, RuntimeOptions options, Animation animation, float time) where TvG : struct, IVertexGeometry where TvM : struct, IVertexMaterial</code></pre>
+</div>
+<h5 class="parameters">Parameters</h5>
+<table class="table table-bordered table-condensed">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a class="xref" href="Aspose.CAD.FileFormats.GLB.Scene.html">Scene</a></td>
+      <td><span class="parametername">srcScene</span></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a class="xref" href="Aspose.CAD.FileFormats.GLB.Runtime.RuntimeOptions.html">RuntimeOptions</a></td>
+      <td><span class="parametername">options</span></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a class="xref" href="Aspose.CAD.FileFormats.GLB.Animation.html">Animation</a></td>
+      <td><span class="parametername">animation</span></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+      <td><span class="parametername">time</span></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<h5 class="returns">Returns</h5>
+<table class="table table-bordered table-condensed">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a class="xref" href="Aspose.CAD.FileFormats.GLB.Geometry.MeshBuilder-4.html">MeshBuilder</a>&lt;<a class="xref" href="Aspose.CAD.FileFormats.GLB.Materials.MaterialBuilder.html">MaterialBuilder</a>, TvG, TvM, <a class="xref" href="Aspose.CAD.FileFormats.GLB.Geometry.VertexTypes.VertexEmpty.html">VertexEmpty</a>&gt;</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<h5 class="typeParameters">Type Parameters</h5>
+<table class="table table-bordered table-condensed">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="parametername">TvG</span></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><span class="parametername">TvM</span></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

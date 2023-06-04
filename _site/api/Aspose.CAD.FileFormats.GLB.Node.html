@@ -1,0 +1,510 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class Node
+ </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class Node
+ ">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Aspose.CAD.FileFormats.GLB.Node">
+
+
+
+  <h1 id="Aspose_CAD_FileFormats_GLB_Node" data-uid="Aspose.CAD.FileFormats.GLB.Node" class="text-break">Class Node
+</h1>
+  <div class="markdown level0 summary"><p>A node in the node hierarchy.
+When the node contains <code>skin</code>, all <code>mesh.primitives</code> <strong>MUST</strong> contain <code>JOINTS_0</code> and <code>WEIGHTS_0</code> attributes.
+A node <strong>MAY</strong> have either a <code>matrix</code> or any combination of <code>translation</code>/<code>rotation</code>/<code>scale</code> (TRS) properties. TRS properties are converted to matrices and postmultiplied in the <code>T * R * S</code> order to compose the transformation matrix; first the scale is applied to the vertices, then the rotation, and then the translation. If none are provided, the transform is the identity. When a node is targeted for animation (referenced by an animation.channel.target), <code>matrix</code> <strong>MUST NOT</strong> be present.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="Aspose.CAD.FileFormats.GLB.IO.JsonSerializable.html">JsonSerializable</a></div>
+    <div class="level2"><a class="xref" href="Aspose.CAD.FileFormats.GLB.ExtraProperties.html">ExtraProperties</a></div>
+    <div class="level3"><a class="xref" href="Aspose.CAD.FileFormats.GLB.LogicalChildOfRoot.html">LogicalChildOfRoot</a></div>
+    <div class="level4"><span class="xref">Node</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Aspose.CAD.FileFormats.GLB.IExtraProperties.html">IExtraProperties</a></div>
+    <div><a class="xref" href="Aspose.CAD.FileFormats.GLB.Collections.IChildOf-1.html">IChildOf</a>&lt;<a class="xref" href="Aspose.CAD.FileFormats.GLB.GlbData.html">GlbData</a>&gt;</div>
+    <div><a class="xref" href="Aspose.CAD.FileFormats.GLB.IVisualNodeContainer.html">IVisualNodeContainer</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.LogicalChildOfRoot.RenameLogicalElements.html#Aspose_CAD_FileFormats_GLB_LogicalChildOfRoot_RenameLogicalElements__1_System_Collections_Generic_IEnumerable___0__System_String_">LogicalChildOfRoot.RenameLogicalElements&lt;T&gt;(IEnumerable&lt;T&gt;, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.LogicalChildOfRoot.Name.html#Aspose_CAD_FileFormats_GLB_LogicalChildOfRoot_Name">LogicalChildOfRoot.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.LogicalChildOfRoot.LogicalParent.html#Aspose_CAD_FileFormats_GLB_LogicalChildOfRoot_LogicalParent">LogicalChildOfRoot.LogicalParent</a>
+    </div>
+    <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.LogicalChildOfRoot.LogicalIndex.html#Aspose_CAD_FileFormats_GLB_LogicalChildOfRoot_LogicalIndex">LogicalChildOfRoot.LogicalIndex</a>
+    </div>
+    <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ExtraProperties.GetExtension.html#Aspose_CAD_FileFormats_GLB_ExtraProperties_GetExtension__1">ExtraProperties.GetExtension&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ExtraProperties.UseExtension.html#Aspose_CAD_FileFormats_GLB_ExtraProperties_UseExtension__1">ExtraProperties.UseExtension&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ExtraProperties.SetExtension.html#Aspose_CAD_FileFormats_GLB_ExtraProperties_SetExtension__1___0_">ExtraProperties.SetExtension&lt;T&gt;(T)</a>
+    </div>
+    <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ExtraProperties.RemoveExtensions.html#Aspose_CAD_FileFormats_GLB_ExtraProperties_RemoveExtensions__1___0_">ExtraProperties.RemoveExtensions&lt;T&gt;(T)</a>
+    </div>
+    <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ExtraProperties.RemoveExtensions.html#Aspose_CAD_FileFormats_GLB_ExtraProperties_RemoveExtensions__1">ExtraProperties.RemoveExtensions&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ExtraProperties.Extensions.html#Aspose_CAD_FileFormats_GLB_ExtraProperties_Extensions">ExtraProperties.Extensions</a>
+    </div>
+    <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ExtraProperties.Extras.html#Aspose_CAD_FileFormats_GLB_ExtraProperties_Extras">ExtraProperties.Extras</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Aspose.html">Aspose</a>.<a class="xref" href="Aspose.CAD.html">CAD</a>.<a class="xref" href="Aspose.CAD.FileFormats.html">FileFormats</a>.<a class="xref" href="Aspose.CAD.FileFormats.GLB.html">GLB</a></h6>
+  <h6><strong>Assembly</strong>: Aspose.CAD.dll</h6>
+  <h5 id="Aspose_CAD_FileFormats_GLB_Node_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class Node : LogicalChildOfRoot, IExtraProperties, IChildOf&lt;GlbData&gt;, IVisualNodeContainer</code></pre>
+  </div>
+  <h3 id="properties">Properties
+</h3>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_Camera" data-uid="Aspose.CAD.FileFormats.GLB.Node.Camera">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.Camera.html#Aspose_CAD_FileFormats_GLB_Node_Camera">Camera</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets or sets the <a class="xref" href="Aspose.CAD.FileFormats.GLB.Camera.html">Camera</a> of this <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.html">Node</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_IsSkinJoint" data-uid="Aspose.CAD.FileFormats.GLB.Node.IsSkinJoint">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.IsSkinJoint.html#Aspose_CAD_FileFormats_GLB_Node_IsSkinJoint">IsSkinJoint</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a value indicating whether this node is used as a Bone joint in a <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.Skin.html#Aspose_CAD_FileFormats_GLB_Node_Skin">Skin</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_IsSkinSkeleton" data-uid="Aspose.CAD.FileFormats.GLB.Node.IsSkinSkeleton">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.IsSkinSkeleton.html#Aspose_CAD_FileFormats_GLB_Node_IsSkinSkeleton">IsSkinSkeleton</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a value indicating whether this node is used as a Skeleton node in a <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.Skin.html#Aspose_CAD_FileFormats_GLB_Node_Skin">Skin</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_IsTransformAnimated" data-uid="Aspose.CAD.FileFormats.GLB.Node.IsTransformAnimated">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.IsTransformAnimated.html#Aspose_CAD_FileFormats_GLB_Node_IsTransformAnimated">IsTransformAnimated</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a value indicating whether this transform is affected by any animation.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_LocalMatrix" data-uid="Aspose.CAD.FileFormats.GLB.Node.LocalMatrix">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.LocalMatrix.html#Aspose_CAD_FileFormats_GLB_Node_LocalMatrix">LocalMatrix</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets or sets the local transform <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.matrix4x4">Matrix4x4</a> of this <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.html">Node</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_LocalTransform" data-uid="Aspose.CAD.FileFormats.GLB.Node.LocalTransform">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.LocalTransform.html#Aspose_CAD_FileFormats_GLB_Node_LocalTransform">LocalTransform</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets or sets the local Scale, Rotation and Translation of this <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.html">Node</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_Mesh" data-uid="Aspose.CAD.FileFormats.GLB.Node.Mesh">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.Mesh.html#Aspose_CAD_FileFormats_GLB_Node_Mesh">Mesh</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets or sets the <a class="xref" href="Aspose.CAD.FileFormats.GLB.Mesh.html">Mesh</a> of this <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.html">Node</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_MorphWeights" data-uid="Aspose.CAD.FileFormats.GLB.Node.MorphWeights">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.MorphWeights.html#Aspose_CAD_FileFormats_GLB_Node_MorphWeights">MorphWeights</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the Morph Weights of this <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.html">Node</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_PunctualLight" data-uid="Aspose.CAD.FileFormats.GLB.Node.PunctualLight">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.PunctualLight.html#Aspose_CAD_FileFormats_GLB_Node_PunctualLight">PunctualLight</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets or sets the <a class="xref" href="Aspose.CAD.FileFormats.GLB.PunctualLight.html">PunctualLight</a> of this <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.html">Node</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_Skin" data-uid="Aspose.CAD.FileFormats.GLB.Node.Skin">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.Skin.html#Aspose_CAD_FileFormats_GLB_Node_Skin">Skin</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets or sets the <a class="xref" href="Aspose.CAD.FileFormats.GLB.Skin.html">Skin</a> of this <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.html">Node</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_VisualChildren" data-uid="Aspose.CAD.FileFormats.GLB.Node.VisualChildren">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.VisualChildren.html#Aspose_CAD_FileFormats_GLB_Node_VisualChildren">VisualChildren</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the visual children <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.html">Node</a> instances contained in this <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.html">Node</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_VisualParent" data-uid="Aspose.CAD.FileFormats.GLB.Node.VisualParent">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.VisualParent.html#Aspose_CAD_FileFormats_GLB_Node_VisualParent">VisualParent</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the visual parent <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.html">Node</a> instance that contains this <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.html">Node</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_VisualRoot" data-uid="Aspose.CAD.FileFormats.GLB.Node.VisualRoot">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.VisualRoot.html#Aspose_CAD_FileFormats_GLB_Node_VisualRoot">VisualRoot</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the visual root <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.html">Node</a> instance that contains this <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.html">Node</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_VisualScenes" data-uid="Aspose.CAD.FileFormats.GLB.Node.VisualScenes">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.VisualScenes.html#Aspose_CAD_FileFormats_GLB_Node_VisualScenes">VisualScenes</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the collection of <a class="xref" href="Aspose.CAD.FileFormats.GLB.Scene.html">Scene</a> instances that reference this <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.html">Node</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_WorldMatrix" data-uid="Aspose.CAD.FileFormats.GLB.Node.WorldMatrix">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.WorldMatrix.html#Aspose_CAD_FileFormats_GLB_Node_WorldMatrix">WorldMatrix</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets or sets the world <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.matrix4x4">Matrix4x4</a> of this <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.html">Node</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_CreateNode_System_String_" data-uid="Aspose.CAD.FileFormats.GLB.Node.CreateNode(System.String)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.CreateNode.html#Aspose_CAD_FileFormats_GLB_Node_CreateNode_System_String_">CreateNode(string)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.html">Node</a> instance,
+adds it to <see cref="!:GlbImage.LogicalNodes"></see>
+and references it as a child in the current graph.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_DeserializeProperty_System_String_System_Text_Json_Utf8JsonReader__" data-uid="Aspose.CAD.FileFormats.GLB.Node.DeserializeProperty(System.String,System.Text.Json.Utf8JsonReader@)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.DeserializeProperty.html#Aspose_CAD_FileFormats_GLB_Node_DeserializeProperty_System_String_System_Text_Json_Utf8JsonReader__">DeserializeProperty(string, ref Utf8JsonReader)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Reads the properties of the current instance from a <span class="xref">System.Text.Json.Utf8JsonReader</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_FindNodesUsingMesh_Aspose_CAD_FileFormats_GLB_Mesh_" data-uid="Aspose.CAD.FileFormats.GLB.Node.FindNodesUsingMesh(Aspose.CAD.FileFormats.GLB.Mesh)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.FindNodesUsingMesh.html#Aspose_CAD_FileFormats_GLB_Node_FindNodesUsingMesh_Aspose_CAD_FileFormats_GLB_Mesh_">FindNodesUsingMesh(Mesh)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a collection of <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.html">Node</a> instances using <code class="paramref">mesh</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_FindNodesUsingSkin_Aspose_CAD_FileFormats_GLB_Skin_" data-uid="Aspose.CAD.FileFormats.GLB.Node.FindNodesUsingSkin(Aspose.CAD.FileFormats.GLB.Skin)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.FindNodesUsingSkin.html#Aspose_CAD_FileFormats_GLB_Node_FindNodesUsingSkin_Aspose_CAD_FileFormats_GLB_Skin_">FindNodesUsingSkin(Skin)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a collection of <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.html">Node</a> instances using <code class="paramref">skin</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_Flatten_Aspose_CAD_FileFormats_GLB_IVisualNodeContainer_" data-uid="Aspose.CAD.FileFormats.GLB.Node.Flatten(Aspose.CAD.FileFormats.GLB.IVisualNodeContainer)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.Flatten.html#Aspose_CAD_FileFormats_GLB_Node_Flatten_Aspose_CAD_FileFormats_GLB_IVisualNodeContainer_">Flatten(IVisualNodeContainer)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Returns all the <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.html">Node</a> instances of a visual hierarchy as a flattened list.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_GetCurveSamplers_Aspose_CAD_FileFormats_GLB_Animation_" data-uid="Aspose.CAD.FileFormats.GLB.Node.GetCurveSamplers(Aspose.CAD.FileFormats.GLB.Animation)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.GetCurveSamplers.html#Aspose_CAD_FileFormats_GLB_Node_GetCurveSamplers_Aspose_CAD_FileFormats_GLB_Animation_">GetCurveSamplers(Animation)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_GetGpuInstancing" data-uid="Aspose.CAD.FileFormats.GLB.Node.GetGpuInstancing">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.GetGpuInstancing.html#Aspose_CAD_FileFormats_GLB_Node_GetGpuInstancing">GetGpuInstancing()</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_GetLocalTransform_Aspose_CAD_FileFormats_GLB_Animation_System_Single_" data-uid="Aspose.CAD.FileFormats.GLB.Node.GetLocalTransform(Aspose.CAD.FileFormats.GLB.Animation,System.Single)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.GetLocalTransform.html#Aspose_CAD_FileFormats_GLB_Node_GetLocalTransform_Aspose_CAD_FileFormats_GLB_Animation_System_Single_">GetLocalTransform(Animation, float)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the local transform of this node in a given animation at a given time.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_GetMorphWeights" data-uid="Aspose.CAD.FileFormats.GLB.Node.GetMorphWeights">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.GetMorphWeights.html#Aspose_CAD_FileFormats_GLB_Node_GetMorphWeights">GetMorphWeights()</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_GetWorldMatrix_Aspose_CAD_FileFormats_GLB_Animation_System_Single_" data-uid="Aspose.CAD.FileFormats.GLB.Node.GetWorldMatrix(Aspose.CAD.FileFormats.GLB.Animation,System.Single)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.GetWorldMatrix.html#Aspose_CAD_FileFormats_GLB_Node_GetWorldMatrix_Aspose_CAD_FileFormats_GLB_Animation_System_Single_">GetWorldMatrix(Animation, float)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the world matrix of this node in a given animation at a given time.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_OnValidateContent_Aspose_CAD_FileFormats_GLB_Validation_ValidationContext_" data-uid="Aspose.CAD.FileFormats.GLB.Node.OnValidateContent(Aspose.CAD.FileFormats.GLB.Validation.ValidationContext)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.OnValidateContent.html#Aspose_CAD_FileFormats_GLB_Node_OnValidateContent_Aspose_CAD_FileFormats_GLB_Validation_ValidationContext_">OnValidateContent(ValidationContext)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_OnValidateReferences_Aspose_CAD_FileFormats_GLB_Validation_ValidationContext_" data-uid="Aspose.CAD.FileFormats.GLB.Node.OnValidateReferences(Aspose.CAD.FileFormats.GLB.Validation.ValidationContext)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.OnValidateReferences.html#Aspose_CAD_FileFormats_GLB_Node_OnValidateReferences_Aspose_CAD_FileFormats_GLB_Validation_ValidationContext_">OnValidateReferences(ValidationContext)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_RemoveGpuInstancing" data-uid="Aspose.CAD.FileFormats.GLB.Node.RemoveGpuInstancing">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.RemoveGpuInstancing.html#Aspose_CAD_FileFormats_GLB_Node_RemoveGpuInstancing">RemoveGpuInstancing()</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_SerializeProperties_System_Text_Json_Utf8JsonWriter_" data-uid="Aspose.CAD.FileFormats.GLB.Node.SerializeProperties(System.Text.Json.Utf8JsonWriter)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.SerializeProperties.html#Aspose_CAD_FileFormats_GLB_Node_SerializeProperties_System_Text_Json_Utf8JsonWriter_">SerializeProperties(Utf8JsonWriter)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Writes the properties of the current instance to a <span class="xref">System.Text.Json.Utf8JsonWriter</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_SetMorphWeights_Aspose_CAD_FileFormats_GLB_Transforms_SparseWeight8_" data-uid="Aspose.CAD.FileFormats.GLB.Node.SetMorphWeights(Aspose.CAD.FileFormats.GLB.Transforms.SparseWeight8)">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.SetMorphWeights.html#Aspose_CAD_FileFormats_GLB_Node_SetMorphWeights_Aspose_CAD_FileFormats_GLB_Transforms_SparseWeight8_">SetMorphWeights(SparseWeight8)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="Aspose_CAD_FileFormats_GLB_Node_UseGpuInstancing" data-uid="Aspose.CAD.FileFormats.GLB.Node.UseGpuInstancing">
+          <a class="xref" href="Aspose.CAD.FileFormats.GLB.Node.UseGpuInstancing.html#Aspose_CAD_FileFormats_GLB_Node_UseGpuInstancing">UseGpuInstancing()</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.FindNode.html#Aspose_CAD_FileFormats_GLB_ToolKit_Toolkit_FindNode_Aspose_CAD_FileFormats_GLB_Node_System_Predicate_Aspose_CAD_FileFormats_GLB_Node__">Toolkit.FindNode(Node, Predicate&lt;Node&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.WithLocalRotation.html#Aspose_CAD_FileFormats_GLB_ToolKit_Toolkit_WithLocalRotation_Aspose_CAD_FileFormats_GLB_Node_System_Numerics_Quaternion_">Toolkit.WithLocalRotation(Node, Quaternion)</a>
+  </div>
+  <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.WithLocalScale.html#Aspose_CAD_FileFormats_GLB_ToolKit_Toolkit_WithLocalScale_Aspose_CAD_FileFormats_GLB_Node_System_Numerics_Vector3_">Toolkit.WithLocalScale(Node, Vector3)</a>
+  </div>
+  <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.WithLocalTransform.html#Aspose_CAD_FileFormats_GLB_ToolKit_Toolkit_WithLocalTransform_Aspose_CAD_FileFormats_GLB_Node_Aspose_CAD_FileFormats_GLB_Transforms_AffineTransform_">Toolkit.WithLocalTransform(Node, AffineTransform)</a>
+  </div>
+  <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.WithLocalTranslation.html#Aspose_CAD_FileFormats_GLB_ToolKit_Toolkit_WithLocalTranslation_Aspose_CAD_FileFormats_GLB_Node_System_Numerics_Vector3_">Toolkit.WithLocalTranslation(Node, Vector3)</a>
+  </div>
+  <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.WithMesh.html#Aspose_CAD_FileFormats_GLB_ToolKit_Toolkit_WithMesh_Aspose_CAD_FileFormats_GLB_Node_Aspose_CAD_FileFormats_GLB_Mesh_">Toolkit.WithMesh(Node, Mesh)</a>
+  </div>
+  <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.WithMorphingAnimation.html#Aspose_CAD_FileFormats_GLB_ToolKit_Toolkit_WithMorphingAnimation_Aspose_CAD_FileFormats_GLB_Node_System_String_Aspose_CAD_FileFormats_GLB_Animations_ICurveSampler_Aspose_CAD_FileFormats_GLB_Transforms_SparseWeight8__">Toolkit.WithMorphingAnimation(Node, string, ICurveSampler&lt;SparseWeight8&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.WithMorphingAnimation.html#Aspose_CAD_FileFormats_GLB_ToolKit_Toolkit_WithMorphingAnimation__1_Aspose_CAD_FileFormats_GLB_Node_System_String_Aspose_CAD_FileFormats_GLB_Animations_ICurveSampler___0__">Toolkit.WithMorphingAnimation&lt;T&gt;(Node, string, ICurveSampler&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.WithOrthographicCamera.html#Aspose_CAD_FileFormats_GLB_ToolKit_Toolkit_WithOrthographicCamera_Aspose_CAD_FileFormats_GLB_Node_System_Single_System_Single_System_Single_System_Single_">Toolkit.WithOrthographicCamera(Node, float, float, float, float)</a>
+  </div>
+  <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.WithPerspectiveCamera.html#Aspose_CAD_FileFormats_GLB_ToolKit_Toolkit_WithPerspectiveCamera_Aspose_CAD_FileFormats_GLB_Node_System_Nullable_System_Single__System_Single_System_Single_System_Single_">Toolkit.WithPerspectiveCamera(Node, float?, float, float, float)</a>
+  </div>
+  <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.WithRotationAnimation.html#Aspose_CAD_FileFormats_GLB_ToolKit_Toolkit_WithRotationAnimation_Aspose_CAD_FileFormats_GLB_Node_System_String_Aspose_CAD_FileFormats_GLB_Animations_ICurveSampler_System_Numerics_Quaternion__">Toolkit.WithRotationAnimation(Node, string, ICurveSampler&lt;Quaternion&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.WithRotationAnimation.html#Aspose_CAD_FileFormats_GLB_ToolKit_Toolkit_WithRotationAnimation_Aspose_CAD_FileFormats_GLB_Node_System_String_System_Collections_Generic_IReadOnlyDictionary_System_Single_System_Numerics_Quaternion__">Toolkit.WithRotationAnimation(Node, string, IReadOnlyDictionary&lt;float, Quaternion&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.WithRotationAnimation.html#Aspose_CAD_FileFormats_GLB_ToolKit_Toolkit_WithRotationAnimation_Aspose_CAD_FileFormats_GLB_Node_System_String_System_ValueTuple_System_Single_System_Numerics_Quaternion____">Toolkit.WithRotationAnimation(Node, string, params (float Key, Quaternion Value)[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.WithScaleAnimation.html#Aspose_CAD_FileFormats_GLB_ToolKit_Toolkit_WithScaleAnimation_Aspose_CAD_FileFormats_GLB_Node_System_String_Aspose_CAD_FileFormats_GLB_Animations_ICurveSampler_System_Numerics_Vector3__">Toolkit.WithScaleAnimation(Node, string, ICurveSampler&lt;Vector3&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.WithScaleAnimation.html#Aspose_CAD_FileFormats_GLB_ToolKit_Toolkit_WithScaleAnimation_Aspose_CAD_FileFormats_GLB_Node_System_String_System_Collections_Generic_IReadOnlyDictionary_System_Single_System_Numerics_Vector3__">Toolkit.WithScaleAnimation(Node, string, IReadOnlyDictionary&lt;float, Vector3&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.WithScaleAnimation.html#Aspose_CAD_FileFormats_GLB_ToolKit_Toolkit_WithScaleAnimation_Aspose_CAD_FileFormats_GLB_Node_System_String_System_ValueTuple_System_Single_System_Numerics_Vector3____">Toolkit.WithScaleAnimation(Node, string, params (float Key, Vector3 Value)[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.WithSkin.html#Aspose_CAD_FileFormats_GLB_ToolKit_Toolkit_WithSkin_Aspose_CAD_FileFormats_GLB_Node_Aspose_CAD_FileFormats_GLB_Skin_">Toolkit.WithSkin(Node, Skin)</a>
+  </div>
+  <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.WithSkinBinding.html#Aspose_CAD_FileFormats_GLB_ToolKit_Toolkit_WithSkinBinding_Aspose_CAD_FileFormats_GLB_Node_System_Numerics_Matrix4x4_Aspose_CAD_FileFormats_GLB_Node___">Toolkit.WithSkinBinding(Node, Matrix4x4, params Node[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.WithSkinBinding.html#Aspose_CAD_FileFormats_GLB_ToolKit_Toolkit_WithSkinBinding_Aspose_CAD_FileFormats_GLB_Node_System_ValueTuple_Aspose_CAD_FileFormats_GLB_Node_System_Numerics_Matrix4x4____">Toolkit.WithSkinBinding(Node, params (Node Joint, Matrix4x4 InverseBindMatrix)[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.WithSkinnedMesh.html#Aspose_CAD_FileFormats_GLB_ToolKit_Toolkit_WithSkinnedMesh_Aspose_CAD_FileFormats_GLB_Node_Aspose_CAD_FileFormats_GLB_Mesh_System_Numerics_Matrix4x4_Aspose_CAD_FileFormats_GLB_Node___">Toolkit.WithSkinnedMesh(Node, Mesh, Matrix4x4, params Node[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.WithSkinnedMesh.html#Aspose_CAD_FileFormats_GLB_ToolKit_Toolkit_WithSkinnedMesh_Aspose_CAD_FileFormats_GLB_Node_Aspose_CAD_FileFormats_GLB_Mesh_System_ValueTuple_Aspose_CAD_FileFormats_GLB_Node_System_Numerics_Matrix4x4____">Toolkit.WithSkinnedMesh(Node, Mesh, params (Node Joint, Matrix4x4 InverseBindMatrix)[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.WithTranslationAnimation.html#Aspose_CAD_FileFormats_GLB_ToolKit_Toolkit_WithTranslationAnimation_Aspose_CAD_FileFormats_GLB_Node_System_String_Aspose_CAD_FileFormats_GLB_Animations_ICurveSampler_System_Numerics_Vector3__">Toolkit.WithTranslationAnimation(Node, string, ICurveSampler&lt;Vector3&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.WithTranslationAnimation.html#Aspose_CAD_FileFormats_GLB_ToolKit_Toolkit_WithTranslationAnimation_Aspose_CAD_FileFormats_GLB_Node_System_String_System_Collections_Generic_IReadOnlyDictionary_System_Single_System_Numerics_Vector3__">Toolkit.WithTranslationAnimation(Node, string, IReadOnlyDictionary&lt;float, Vector3&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Aspose.CAD.FileFormats.GLB.ToolKit.Toolkit.WithTranslationAnimation.html#Aspose_CAD_FileFormats_GLB_ToolKit_Toolkit_WithTranslationAnimation_Aspose_CAD_FileFormats_GLB_Node_System_String_System_ValueTuple_System_Single_System_Numerics_Vector3____">Toolkit.WithTranslationAnimation(Node, string, params (float Key, Vector3 Value)[])</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
