@@ -1,0 +1,15 @@
+_site/
+api/
+
+DROP/
+TEMP/
+packages/
+bin/
+obj/
+.cache/
+.idea/
+.vs/
+*.user
+api/*.yml
+.manifest
+src/
