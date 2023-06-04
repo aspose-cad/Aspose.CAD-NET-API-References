@@ -11,3 +11,4 @@ obj/
 api/*.yml
 .manifest
 src/
+/tmpFile.txt
