@@ -1,4 +1,4 @@
-REM dotnet run --project build
+dotnet run --project build
 cd _site
 docfx serve
 cd ..

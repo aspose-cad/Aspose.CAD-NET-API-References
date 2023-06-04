@@ -1,0 +1,68 @@
+appID: r2nl0flc
+image: cad.repository.dev.dynabic.com/api-docfx-app
+hostOS: linux
+port: 8080
+
+probes:
+  # =========================================================================================================
+  # Startup probes are used to determine when a container application has been initialized successfully. 
+  # If a startup probe fails, the pod is restarted. When pod containers take too long to become ready, 
+  # readiness probes may fail repeatedly. In this case, containers risk being terminated by kubelet before 
+  # they are up and running. This is where the startup probe comes to the rescue.
+  # The startup probe forces liveness and readiness checks to wait until it succeeds, 
+  # so that the application startup is not compromised. 
+  # That is especially beneficial for slow-starting legacy applications.
+  #startup:
+  #  http:
+  #    path: /api/health-check
+  #  
+  #  # Number of seconds after the container has started before probes are initiated.
+  #  initialDelaySeconds: 1
+  #
+  #  # Number of seconds after which the probe times out.
+  #  # Defaults to 1 second. Minimum value is 1.
+  #  # Optional.
+  #  timeoutSeconds: 2
+  #  
+  #  # How often (in seconds) to perform the probe.
+  #  # Default to 10 seconds. Minimum value is 1.
+  #  # Optional.
+  #  periodSeconds: 5
+  #
+  #  # Minimum consecutive successes for the probe to be considered successful after having failed.
+  #  # Defaults to 1. Must be 1 for liveness and startup. Minimum value is 1.
+  #  # Optional.
+  #  successThreshold: 1
+  #
+  #  # Minimum consecutive failures for the probe to be considered failed after having succeeded.
+  #  # Defaults to 3. Minimum value is 1.
+  #  # Optional.
+  #  failureThreshold: 3
+
+  # =========================================================================================================
+  # Liveness probes allow Kubernetes to check if your app is alive. 
+  # If a container app is no longer serving requests, kubernetes will intervene and restart the container.
+  # For example, if an application is not responding and cannot make progress because of a deadlock, 
+  # the liveness probe detects that it is faulty.
+  #liveness:
+  #  http:
+  #    path: /cad/api/health-check
+  #  initialDelaySeconds: 10
+  #  timeoutSeconds: 5
+  #  periodSeconds: 100
+  #  successThreshold: 1
+  #  failureThreshold: 3
+
+  # =========================================================================================================
+  # Readiness probes run during the entire lifecycle of the container. 
+  # Kubernetes uses this probe to know when the container is ready to start accepting traffic. 
+  # If a readiness probe fails, Kubernetes will stop routing traffic to the pod until the probe passes again.
+  #readiness:
+  #  http:
+  #    path: /cad/api/health-check
+  #    port: 80
+  #  initialDelaySeconds: 5
+  #  timeoutSeconds: 10
+  #  periodSeconds: 10
+  #  successThreshold: 1
+  #  failureThreshold: 3
