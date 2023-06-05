@@ -80,92 +80,94 @@
             <article class="content wrap" id="_content" data-uid="Aspose.CAD.StringFormatFlags">
 
 
-
-
-  <h1 id="Aspose_CAD_StringFormatFlags" data-uid="Aspose.CAD.StringFormatFlags" class="text-break">Enum StringFormatFlags
+  <h1 id="Aspose_CAD_StringFormatFlags" data-uid="Aspose.CAD.StringFormatFlags">Enum StringFormatFlags
 </h1>
   <div class="markdown level0 summary"><p>Specifies the display and layout information for text strings.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
+
+
+
+
   <h6><strong>Namespace</strong>: <a class="xref" href="Aspose.html">Aspose</a>.<a class="xref" href="Aspose.CAD.html">CAD</a></h6>
   <h6><strong>Assembly</strong>: Aspose.CAD.dll</h6>
+
   <h5 id="Aspose_CAD_StringFormatFlags_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[ComVisible(false)]
+    <pre><code class="lang- hljs">[ComVisible(false)]
 [Flags]
 public enum StringFormatFlags</code></pre>
   </div>
-  <h3 id="fields">Fields
-</h3>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    <thead>
-    <tbody>
-      <tr>
-        <td id="Aspose_CAD_StringFormatFlags_DirectionRightToLeft">DirectionRightToLeft</td>
-        <td><p>Text is displayed from right to left.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="Aspose_CAD_StringFormatFlags_DirectionVertical">DirectionVertical</td>
-        <td><p>Text is vertically aligned.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="Aspose_CAD_StringFormatFlags_DisplayFormatControl">DisplayFormatControl</td>
-        <td><p>Control characters such as the left-to-right mark are shown in the output with a representative glyph.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="Aspose_CAD_StringFormatFlags_FitBlackBox">FitBlackBox</td>
-        <td><p>Parts of characters are allowed to overhang the string's layout rectangle. By default, characters are repositioned to avoid any overhang.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="Aspose_CAD_StringFormatFlags_LineLimit">LineLimit</td>
-        <td><p>Only entire lines are laid out in the formatting rectangle. By default layout continues until the end of the text, or until no more lines are visible as a result of clipping, whichever comes first.
+
+
+
+
+
+      <h4 id="Aspose_CAD_StringFormatFlags_DirectionRightToLeft"><a href="#collapsible-Aspose_CAD_StringFormatFlags_DirectionRightToLeft" class="expander" data-toggle="collapse">DirectionRightToLeft</a></h4>
+
+      <div id="collapsible-Aspose_CAD_StringFormatFlags_DirectionRightToLeft" class="collapse in">
+        <p><p>Text is displayed from right to left.</p>
+
+      </div>
+      <h4 id="Aspose_CAD_StringFormatFlags_DirectionVertical"><a href="#collapsible-Aspose_CAD_StringFormatFlags_DirectionVertical" class="expander" data-toggle="collapse">DirectionVertical</a></h4>
+
+      <div id="collapsible-Aspose_CAD_StringFormatFlags_DirectionVertical" class="collapse in">
+        <p><p>Text is vertically aligned.</p>
+
+      </div>
+      <h4 id="Aspose_CAD_StringFormatFlags_DisplayFormatControl"><a href="#collapsible-Aspose_CAD_StringFormatFlags_DisplayFormatControl" class="expander" data-toggle="collapse">DisplayFormatControl</a></h4>
+
+      <div id="collapsible-Aspose_CAD_StringFormatFlags_DisplayFormatControl" class="collapse in">
+        <p><p>Control characters such as the left-to-right mark are shown in the output with a representative glyph.</p>
+
+      </div>
+      <h4 id="Aspose_CAD_StringFormatFlags_FitBlackBox"><a href="#collapsible-Aspose_CAD_StringFormatFlags_FitBlackBox" class="expander" data-toggle="collapse">FitBlackBox</a></h4>
+
+      <div id="collapsible-Aspose_CAD_StringFormatFlags_FitBlackBox" class="collapse in">
+        <p><p>Parts of characters are allowed to overhang the string's layout rectangle. By default, characters are repositioned to avoid any overhang.</p>
+
+      </div>
+      <h4 id="Aspose_CAD_StringFormatFlags_LineLimit"><a href="#collapsible-Aspose_CAD_StringFormatFlags_LineLimit" class="expander" data-toggle="collapse">LineLimit</a></h4>
+
+      <div id="collapsible-Aspose_CAD_StringFormatFlags_LineLimit" class="collapse in">
+        <p><p>Only entire lines are laid out in the formatting rectangle. By default layout continues until the end of the text, or until no more lines are visible as a result of clipping, whichever comes first.
 Note that the default settings allow the last line to be partially obscured by a formatting rectangle that is not a whole multiple of the line height. To ensure that only whole lines are seen,
 specify this value and be careful to provide a formatting rectangle at least as tall as the height of one line.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="Aspose_CAD_StringFormatFlags_MeasureTrailingSpaces">MeasureTrailingSpaces</td>
-        <td><p>Includes the trailing space at the end of each line. By default the boundary rectangle returned by the MeasureString method excludes the space at the end of each line. Set this flag to include that space in measurement.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="Aspose_CAD_StringFormatFlags_NoClip">NoClip</td>
-        <td><p>Overhanging parts of glyphs, and unwrapped text reaching outside the formatting rectangle are allowed to show. By default all text and glyph parts reaching outside the formatting rectangle are clipped.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="Aspose_CAD_StringFormatFlags_NoFontFallback">NoFontFallback</td>
-        <td><p>Fallback to alternate fonts for characters not supported in the requested font is disabled. Any missing characters are displayed with the fonts missing glyph, usually an open square.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="Aspose_CAD_StringFormatFlags_NoWrap">NoWrap</td>
-        <td><p>Text wrapping between lines when formatting within a rectangle is disabled. This flag is implied when a point is passed instead of a rectangle, or when the specified rectangle has a zero line length.</p>
-</td>
-      </tr>
-    </tbody>
-  </thead></thead></table>
+
+      </div>
+      <h4 id="Aspose_CAD_StringFormatFlags_MeasureTrailingSpaces"><a href="#collapsible-Aspose_CAD_StringFormatFlags_MeasureTrailingSpaces" class="expander" data-toggle="collapse">MeasureTrailingSpaces</a></h4>
+
+      <div id="collapsible-Aspose_CAD_StringFormatFlags_MeasureTrailingSpaces" class="collapse in">
+        <p><p>Includes the trailing space at the end of each line. By default the boundary rectangle returned by the MeasureString method excludes the space at the end of each line. Set this flag to include that space in measurement.</p>
+
+      </div>
+      <h4 id="Aspose_CAD_StringFormatFlags_NoClip"><a href="#collapsible-Aspose_CAD_StringFormatFlags_NoClip" class="expander" data-toggle="collapse">NoClip</a></h4>
+
+      <div id="collapsible-Aspose_CAD_StringFormatFlags_NoClip" class="collapse in">
+        <p><p>Overhanging parts of glyphs, and unwrapped text reaching outside the formatting rectangle are allowed to show. By default all text and glyph parts reaching outside the formatting rectangle are clipped.</p>
+
+      </div>
+      <h4 id="Aspose_CAD_StringFormatFlags_NoFontFallback"><a href="#collapsible-Aspose_CAD_StringFormatFlags_NoFontFallback" class="expander" data-toggle="collapse">NoFontFallback</a></h4>
+
+      <div id="collapsible-Aspose_CAD_StringFormatFlags_NoFontFallback" class="collapse in">
+        <p><p>Fallback to alternate fonts for characters not supported in the requested font is disabled. Any missing characters are displayed with the fonts missing glyph, usually an open square.</p>
+
+      </div>
+      <h4 id="Aspose_CAD_StringFormatFlags_NoWrap"><a href="#collapsible-Aspose_CAD_StringFormatFlags_NoWrap" class="expander" data-toggle="collapse">NoWrap</a></h4>
+
+      <div id="collapsible-Aspose_CAD_StringFormatFlags_NoWrap" class="collapse in">
+        <p><p>Text wrapping between lines when formatting within a rectangle is disabled. This flag is implied when a point is passed instead of a rectangle, or when the specified rectangle has a zero line length.</p>
+
+      </div>
+
 </article>
+          </div>
+          <div class="contribution-panel mobile-hide">
           </div>
 
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                </ul>
-              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In This Article</h5>
-                <div></div>
               </nav>
             </div>
           </div>

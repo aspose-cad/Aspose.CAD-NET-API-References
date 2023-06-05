@@ -80,22 +80,20 @@
             <article class="content wrap" id="_content" data-uid="Aspose.CAD.FileFormats.GLB.Geometry.MorphTargetBuilder`4">
 
 
-
-  <h1 id="Aspose_CAD_FileFormats_GLB_Geometry_MorphTargetBuilder_4" data-uid="Aspose.CAD.FileFormats.GLB.Geometry.MorphTargetBuilder`4" class="text-break">Class MorphTargetBuilder&lt;TMaterial, TvG, TvS, TvM&gt;
+  <h1 id="Aspose_CAD_FileFormats_GLB_Geometry_MorphTargetBuilder_4" data-uid="Aspose.CAD.FileFormats.GLB.Geometry.MorphTargetBuilder`4">Class MorphTargetBuilder&lt;TMaterial, TvG, TvS, TvM&gt;
 </h1>
   <div class="markdown level0 summary"><p>Represents the vertex deltas of a specific morph target.
 <a class="xref" href="Aspose.CAD.FileFormats.GLB.Geometry.MeshBuilder-4.UseMorphTarget.html#Aspose_CAD_FileFormats_GLB_Geometry_MeshBuilder_4_UseMorphTarget_System_Int32_">UseMorphTarget(int)</a></p>
 </div>
   <div class="markdown level0 conceptual"></div>
+
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
     <div class="level1"><span class="xref">MorphTargetBuilder&lt;TMaterial, TvG, TvS, TvM&gt;</span></div>
   </div>
-  <div class="implements">
-    <h5>Implements</h5>
-    <div><a class="xref" href="Aspose.CAD.FileFormats.GLB.Geometry.IMorphTargetBuilder.html">IMorphTargetBuilder</a></div>
-  </div>
+
+
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -117,48 +115,55 @@
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
     </div>
   </div>
+
   <h6><strong>Namespace</strong>: <a class="xref" href="Aspose.html">Aspose</a>.<a class="xref" href="Aspose.CAD.html">CAD</a>.<a class="xref" href="Aspose.CAD.FileFormats.html">FileFormats</a>.<a class="xref" href="Aspose.CAD.FileFormats.GLB.html">GLB</a>.<a class="xref" href="Aspose.CAD.FileFormats.GLB.Geometry.html">Geometry</a></h6>
   <h6><strong>Assembly</strong>: Aspose.CAD.dll</h6>
+
   <h5 id="Aspose_CAD_FileFormats_GLB_Geometry_MorphTargetBuilder_4_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class MorphTargetBuilder&lt;TMaterial, TvG, TvS, TvM&gt; : IMorphTargetBuilder where TvG : struct, IVertexGeometry where TvS : struct, IVertexSkinning where TvM : struct, IVertexMaterial</code></pre>
+    <pre><code class="lang- hljs">public sealed class MorphTargetBuilder&lt;TMaterial, TvG, TvS, TvM&gt; : IMorphTargetBuilder where TvG : struct, IVertexGeometry where TvS : struct, IVertexSkinning where TvM : struct, IVertexMaterial</code></pre>
   </div>
+
+
+
   <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TMaterial</span></td>
-        <td><p>The material type used by the base mesh.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TvG</span></td>
-        <td><p>The vertex geometry type used by the base mesh.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TvS</span></td>
-        <td><p>The vertex skinning type used by the base mesh.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TvM</span></td>
-        <td><p>The vertex material type used by the base mesh.</p>
-</td>
-      </tr>
-    </tbody>
+  <table>
+    <tr>
+      <td>
+        <span class="parametername">TMaterial</span>
+        <p><p>The material type used by the base mesh.</p>
+
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="parametername">TvG</span>
+        <p><p>The vertex geometry type used by the base mesh.</p>
+
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="parametername">TvS</span>
+        <p><p>The vertex skinning type used by the base mesh.</p>
+
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="parametername">TvM</span>
+        <p><p>The vertex material type used by the base mesh.</p>
+
+      </td>
+    </tr>
   </table>
+
   <h5 id="Aspose_CAD_FileFormats_GLB_Geometry_MorphTargetBuilder_4_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>Morph targets are stored separately on each <a class="xref" href="Aspose.CAD.FileFormats.GLB.Geometry.PrimitiveBuilder-4.html">PrimitiveBuilder&lt;TMaterial, TvG, TvM, TvS&gt;</a>,
 so connecting vertices between two primitives might be duplicated. This means that when we set
 a displaced vertex, we must be sure we do so for all instances we can find.</p>
 </div>
+
   <h3 id="properties">Properties
 </h3>
   <table class="table table-bordered table-condensed">
@@ -244,16 +249,12 @@ a displaced vertex, we must be sure we do so for all instances we can find.</p>
 
 </article>
           </div>
+          <div class="contribution-panel mobile-hide">
+          </div>
 
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                </ul>
-              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In This Article</h5>
-                <div></div>
               </nav>
             </div>
           </div>

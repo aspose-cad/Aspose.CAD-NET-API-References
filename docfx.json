@@ -77,7 +77,7 @@
     "fileMetadataFiles": [],
     "template": [
       "default",
-	  "mathew/src"
+	  "templates/mathew/src"
     ],
     "postProcessors": [
 	  "ExtractSearchIndex"
