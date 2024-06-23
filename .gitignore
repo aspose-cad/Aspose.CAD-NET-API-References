@@ -3,6 +3,7 @@
 **/obj/
 **/bin/
 **/_site/
+**/src/api/
 **/*.suo
 **/*.user
 **/*.DotSettings

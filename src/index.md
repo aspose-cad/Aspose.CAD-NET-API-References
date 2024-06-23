@@ -2,10 +2,35 @@
 _layout: landing
 ---
 
-# This is the **HOMEPAGE**.
+# Welcome to Aspose.CAD API and SDK Reference Site
 
-Refer to [Markdown](http://daringfireball.net/projects/markdown/) for how to write markdown files.
+Aspose.CAD for .NET is a cross-platform SDK library offering export, editing, conversion and other features for CAD and BIM drawings. This site provides quick access to essential resources. Visit the [API Documentation](/api/Aspose.CAD.html) for detailed information.
 
-## Quick Start Notes:
+## Quick Start Guide
 
-1. Add images to the *images* folder if the file is referencing an image.
+Get started with Aspose.CAD for .NET SDK in minutes. Follow the steps below to set up and run your first project. Detailed examples can be found in the [API Documentation](/api/Aspose.CAD.html).
+
+### Installation
+
+1. Install Aspose.CAD for .NET from NuGet:
+    ```sh
+    Install-Package Aspose.CAD
+    ```
+
+2. Add the library to your project:
+    ```csharp
+    using Aspose.CAD;
+    ```
+
+### Basic Usage
+
+Convert a CAD file to PDF:
+```csharp
+string sourceFilePath = "example.dwg";
+string outputFilePath = "output.pdf";
+
+using (CadImage cadImage = (CadImage)Image.Load(sourceFilePath))
+{
+    PdfOptions pdfOptions = new PdfOptions();
+    cadImage.Save(outputFilePath, pdfOptions);
+}

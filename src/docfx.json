@@ -1,23 +1,29 @@
 {
   "metadata": [
     {
+      "dest": "api",
       "src": [
         {
-          "src": "bootstrap",
           "files": [
-            "**/*.csproj"
+            "bootstrap/bin/Release/net8.0/Aspose.CAD.dll"
           ]
         }
-      ],
-      "dest": "../api"
+      ],	  
+      "noRestore": false,
+      "includePrivateMembers": false,
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false,
+	  "namespaceLayout": "nested",
+	  "memberLayout": "separatePages"
     }
   ],
   "build": {
     "content": [
       {
-        "files": {
-          "../content/**/*.{md,yml}",
-		  "../api/**/*.{md,yml}"
+        "files": [
+		  "*.{md,yml}",
+          "content/**/*.{md,yml}",
+		  "api/**/*.{md,yml}"
         ],
         "exclude": [
           "../_site/**"
@@ -27,7 +33,7 @@
     "resource": [
       {
         "files": [
-          "../images/**"
+          "images/**"
         ]
       }
     ],

@@ -6,8 +6,11 @@
 https://github.com/dotnet/docfx
 https://dotnet.github.io/docfx/index.html
 
-### Install
+### First time
 dotnet tool install -g docfx
-mkdir build && cd build
+mkdir src || cd src
 docfx init -y
+
+### Build
+cd src
 docfx build docfx.json --serve

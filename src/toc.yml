@@ -1,4 +1,4 @@
-- name: Docs
-  href: docs/
+#- name: Basics
+#  href: content/
 - name: API
   href: api/
