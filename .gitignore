@@ -1,0 +1,8 @@
+**/.vs/
+**/.idea/
+**/obj/
+**/bin/
+**/_site/
+**/*.suo
+**/*.user
+**/*.DotSettings

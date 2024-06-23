@@ -1,0 +1,6 @@
+[submodule "docfx/src"]
+	path = docfx/src
+	url = https://github.com/dotnet/docfx.git
+[submodule "docfx/templates/mathew"]
+	path = docfx/templates/mathew
+	url = https://github.com/MathewSachin/docfx-tmpl.git
