@@ -11,6 +11,6 @@ dotnet tool install -g docfx
 mkdir src || cd src
 docfx init -y
 
-### Build
+### Build and Serve
 cd src
 docfx build docfx.json --serve
