@@ -2,7 +2,7 @@
 _layout: landing
 ---
 
-# Welcome to Aspose.CAD for .NET API
+# Welcome to Aspose.CAD for .NET API version 24.5
 
 Aspose.CAD for .NET is a cross-platform SDK library offering export, editing, conversion and other features for CAD and BIM drawings. This site provides quick access to essential resources. Visit the [API Documentation](/api/Aspose.CAD.html) for detailed information.
 

@@ -35,6 +35,13 @@
         "files": [
           "images/**"
         ]
+      },
+	  {
+        "files": [
+          "images/favicon.ico"
+        ],
+        "src": ".",
+        "dest": "."
       }
     ],
     "output": "../_site",

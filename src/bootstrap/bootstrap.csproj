@@ -1,18 +1,47 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>disable</Nullable>
-  </PropertyGroup>
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Aspose.CAD" Version="*" />
-    <PackageReference Include="Microsoft.DocAsCode.App" Version="2.67.3" />
-    <PackageReference Include="Microsoft.DocAsCode.Plugins" Version="2.67.3" />
-    <PackageReference Include="Microsoft.DocAsCode.MarkdigEngine.Extensions" Version="2.67.3" />
-    <PackageReference Include="memberpage.plugins" Version="2.59.4" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Aspose.CAD" Version="*"/>
+        <PackageReference Include="Microsoft.DocAsCode.App" Version="2.67.3"/>
+        <PackageReference Include="Microsoft.DocAsCode.Plugins" Version="2.67.3"/>
+        <PackageReference Include="Microsoft.DocAsCode.MarkdigEngine.Extensions" Version="2.67.3"/>
+        <PackageReference Include="memberpage.plugins" Version="2.59.4"/>
+    </ItemGroup>
+
+    <Target Name="CopyXmlDocs" AfterTargets="Build">
+        <ItemGroup>
+            <AsposeCadReference Include="@(ReferenceCopyLocalPaths)" Condition="%(Filename) == 'Aspose.CAD'">
+                <FrameworkRelativeDir>%(RelativeDir)</FrameworkRelativeDir>
+                <FrameworkDir>$([System.IO.Path]::GetDirectoryName(%(AsposeCadReference.FrameworkRelativeDir)))</FrameworkDir>
+                <FrameworkId>$([System.IO.Path]::GetFileName(%(AsposeCadReference.FrameworkDir)))</FrameworkId>
+                <SecondDir>$([System.IO.Directory]::GetParent(%(AsposeCadReference.FrameworkRelativeDir)))</SecondDir>
+                <VersionDir>$([System.IO.Directory]::GetParent(%(AsposeCadReference.SecondDir)))</VersionDir>
+                <PackageDir>$([System.IO.Directory]::GetParent(%(AsposeCadReference.VersionDir)))</PackageDir>
+                <PackageId>$([System.IO.Path]::GetFileName(%(AsposeCadReference.PackageDir)))</PackageId>
+                <NuspecFile>%(MyReference.VersionDir)\%(AsposeCadReference.PackageId).nuspec</NuspecFile>
+            </AsposeCadReference>
+        </ItemGroup>
+
+        <PropertyGroup>
+            <AsposeCadVersion>%(AsposeCadReference.PackageId)</AsposeCadVersion>
+            <AsposeCadFramework>%(AsposeCadReference.FrameworkId)</AsposeCadFramework>
+        </PropertyGroup>
+
+        <Message Text="Version  : $(AsposeCadVersion)" Importance="high"/>
+        <Message Text="Framework: $(AsposeCadFramework)" Importance="high"/>
+
+        <ItemGroup>
+            <XmlDocFiles Include="$(NuGetPackageRoot)Aspose.CAD\$(AsposeCadVersion)\lib\$(AsposeCadFramework)\Aspose.CAD.xml"/>
+        </ItemGroup>
+
+        <Copy SourceFiles="@(XmlDocFiles)" DestinationFolder="$(OutputPath)"/>
+    </Target>
 
 </Project>

@@ -1,5 +1,3 @@
 echo off
 
-call ./_build.bat --serve
-
-cd ..
+call _build.bat --serve

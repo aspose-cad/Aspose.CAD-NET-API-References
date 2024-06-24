@@ -1,5 +1,3 @@
 echo off
 
-call ./_build.bat
-
-cd ..
+call _build.bat
