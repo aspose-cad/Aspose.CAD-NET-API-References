@@ -1,3 +1,8 @@
 echo off
 
-call _build.bat --serve
+set force=
+for %%i in (%*) do (
+    if "%%i"=="-f" set force=--force
+)
+
+call _build.bat --serve %force%

@@ -1,0 +1,40 @@
+<div id="dvMenuFooter">
+    <div class="footerbottom">
+        <div class="footercol">
+            <div class="socialicon">
+                <ul>
+                    <li>
+                        <a rel="nofollow" class="fb" title="Like us on facebook" href="https://www.facebook.com/AsposeApp">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="nofollow" class="twitter" title="Follow us on twitter" href="https://twitter.com/AsposeApp">
+                            <i class="fa-twitter fa"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="nofollow" class="linkedin" title="Link us on linkedin" href="https://www.linkedin.com/company/asposeapp">
+                            <i class="fa-linkedin fa"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottomMenu">
+                <ul>
+                </ul>
+            </div>
+        </div>
+        <div class="footer2bar">
+            <div class="footer2col">
+                <div class="footer2text">
+                    <p>© Aspose Pty Ltd 2001-2024. All Rights Reserved.</p>
+                </div>
+                <div class="footer2anchor">
+                    <span class="footer2bottom">
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
