@@ -31,6 +31,11 @@ body:not([data-search])[data-layout=""]>main>.toc-offcanvas, body:not([data-sear
     top: calc(60px + 5.5rem);
 }
 
+body:not([data-search])[data-layout=""]>main>.affix, body:not([data-search])[data-layout=conceptual]>main>.affix {
+    position: sticky;
+    top: calc(60px + 5.5rem);
+}
+
 @media (max-width: 768px) {	
     .search-results {
     	margin-top: 10.5rem !important;
