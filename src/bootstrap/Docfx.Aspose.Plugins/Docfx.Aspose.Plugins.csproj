@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <LangVersion>latest</LangVersion>
+        <Nullable>disable</Nullable>
+        <DocfxVersion>2.77.0</DocfxVersion>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="Aspose.CAD" Version="*" />
+        <PackageReference Include="System.Composition" Version="8.0.0" />
+        <PackageReference Include="Docfx.App" Version="$(DocfxVersion)" />
+        <PackageReference Include="Docfx.Plugins" Version="$(DocfxVersion)" />
+        <PackageReference Include="Docfx.MarkdigEngine.Extensions" Version="$(DocfxVersion)" />
+        <!--<PackageReference Include="memberpage.plugins" Version="2.59.4"/>-->
+    </ItemGroup>
+    
+</Project>

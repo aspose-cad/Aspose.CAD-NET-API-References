@@ -4,8 +4,10 @@
       "dest": "api",
       "src": [
         {
+		  //"src": "./",
           "files": [
-            "bootstrap/bin/Release/net8.0/Aspose.CAD.dll"
+            //"bootstrap/Docfx.Boostrap/bin/Debug/net8.0/Aspose.CAD.dll"
+			"bootstrap/Docfx.Boostrap/bin/Debug/net8.0/System.Composition.Convention.dll"
           ]
         }
       ],	  
@@ -20,13 +22,14 @@
   "build": {
     "content": [
       {
+		"src": ".",  
         "files": [
 		  "*.{md,yml}",
           "content/**/*.{md,yml}",
 		  "api/**/*.{md,yml}"
         ],
         "exclude": [
-          "../_site/**"
+          //"../_site/**"
         ]
       }
     ],
@@ -47,14 +50,24 @@
     "output": "../_site",
     "template": [
       "default",
-	  "modern",
 	  "templates/aspose-modern"
     ],
+	//"customLinkResolver": "AsposeHrefGenerator",
+    "postProcessors": ["UrlCustomizationProcessor"],
     "globalMetadata": {
-      "_appName": "Aspose.CAD for .NET",
+      "_appName": "Aspose.CAD .NET SDK",
       "_appTitle": "Aspose.CAD for .NET API Reference",
       "_enableSearch": true,
-      "pdf": true
+	  "_enableNewTab": true,
+      "pdf": true,
+	  
+	  "_trailingSlash": true,
+	  "_lowerCaseFiles": true,
+	  "_ctorToClassName": true,
+	  "_symbolsSeparator": "/",
+	  "_virtualPath": "/cad/net/",
+	  "_suppressPrefixes": [ "/api/" ],
+	  "_suppressExtensions": [ ".html" ]
     },
 	"sitemap": {
       "baseUrl": "https://reference.aspose.com/cad/net/",

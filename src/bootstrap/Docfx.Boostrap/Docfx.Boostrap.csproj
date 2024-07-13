@@ -9,15 +9,14 @@
 
     <ItemGroup>
         <PackageReference Include="Aspose.CAD" Version="*"/>
-        <PackageReference Include="Microsoft.DocAsCode.App" Version="2.67.3"/>
-        <PackageReference Include="Microsoft.DocAsCode.Plugins" Version="2.67.3"/>
-        <PackageReference Include="Microsoft.DocAsCode.MarkdigEngine.Extensions" Version="2.67.3"/>
-        <PackageReference Include="memberpage.plugins" Version="2.59.4"/>
+        <ProjectReference Include="..\..\..\docfx\plugins\DocFx.Plugin.LastModified\DocFx.Plugin.LastModified\DocFx.Plugin.LastModified.csproj"/>
+        <ProjectReference Include="..\Docfx.Aspose.Plugins\Docfx.Aspose.Plugins.csproj"/>
     </ItemGroup>
 
     <Target Name="CopyXmlDocs" AfterTargets="Build">
         <ItemGroup>
-            <AsposeCadReference Include="@(ReferenceCopyLocalPaths)" Condition="%(Filename) == 'Aspose.CAD'">
+            <!-- ReferenceCopyLocalPaths as alternative -->
+            <AsposeCadReference Include="@(ReferencePathWithRefAssemblies)" Condition="%(Filename) == 'Aspose.CAD'">
                 <FrameworkRelativeDir>%(RelativeDir)</FrameworkRelativeDir>
                 <FrameworkDir>$([System.IO.Path]::GetDirectoryName(%(AsposeCadReference.FrameworkRelativeDir)))</FrameworkDir>
                 <FrameworkId>$([System.IO.Path]::GetFileName(%(AsposeCadReference.FrameworkDir)))</FrameworkId>
@@ -34,14 +33,16 @@
             <AsposeCadFramework>%(AsposeCadReference.FrameworkId)</AsposeCadFramework>
         </PropertyGroup>
 
-        <Message Text="Version  : $(AsposeCadVersion)" Importance="high"/>
-        <Message Text="Framework: $(AsposeCadFramework)" Importance="high"/>
+        <Message Text="Version   : $(AsposeCadVersion)" Importance="high"/>
+        <Message Text="Framework : $(AsposeCadFramework)" Importance="high"/>
+        <Message Text="Aspose.CAD: @(AsposeCadReference)" Importance="high"/>
 
         <ItemGroup>
             <XmlDocFiles Include="$(NuGetPackageRoot)Aspose.CAD\$(AsposeCadVersion)\lib\$(AsposeCadFramework)\Aspose.CAD.xml"/>
+            <DllFiles Include="$(NuGetPackageRoot)Aspose.CAD\$(AsposeCadVersion)\lib\$(AsposeCadFramework)\Aspose.CAD.dll"/>
         </ItemGroup>
 
         <Copy SourceFiles="@(XmlDocFiles)" DestinationFolder="$(OutputPath)"/>
+        <Copy SourceFiles="@(DllFiles)" DestinationFolder="$(OutputPath)"/>
     </Target>
-
 </Project>

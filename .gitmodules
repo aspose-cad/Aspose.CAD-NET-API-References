@@ -8,3 +8,6 @@
 [submodule "docfx/templates/mathew"]
 	path = docfx/templates/mathew
 	url = https://github.com/MathewSachin/docfx-tmpl.git
+[submodule "docfx/plugins/DocFx.Plugin.LastModified"]
+	path = docfx/plugins/DocFx.Plugin.LastModified
+	url = https://github.com/Still34/DocFx.Plugin.LastModified

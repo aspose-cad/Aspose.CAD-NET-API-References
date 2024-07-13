@@ -9,6 +9,12 @@ header {
 	z-index: 9 !important;
 }
 
+#DynabicMenuInnerDiv, body>header.bg-body, body>header>nav, body[data-layout=landing]>header>nav {
+	display: block !important;
+	width: calc(100vw - 1px) !important;
+	max-width: calc(100vw - 1px) !important;
+}
+
 .navbar-collapse {
 	background-color: rgba(var(--bs-body-bg-rgb)) !important;
 	width: 100% !important;
@@ -26,19 +32,26 @@ main, .search-results {
 	margin-top: 7.5rem !important;
 }
 
-body:not([data-search])[data-layout=""]>main>.toc-offcanvas, body:not([data-search])[data-layout=conceptual]>main>.toc-offcanvas {
+body>main>.toc-offcanvas {
     position: sticky;
     top: calc(60px + 5.5rem);
 }
 
-body:not([data-search])[data-layout=""]>main>.affix, body:not([data-search])[data-layout=conceptual]>main>.affix {
+body>main>.affix {
     position: sticky;
     top: calc(60px + 5.5rem);
 }
 
 @media (max-width: 768px) {	
+    .sr-items {
+		overflow-wrap: break-word !important;
+	}
+	
+    #search-results>.sr-items .sr-item>.item-title {
+        font-size: medium !important;
+    }
     .search-results {
-    	margin-top: 10.5rem !important;
+    	margin-top: 7.5rem !important;
     }
     .navbar #navbar form.search {
         align-self: baseline !important;

@@ -15,15 +15,15 @@
       <meta name="title" content="{{#title}}{{title}}{{/title}}{{^title}}{{>partials/title}}{{/title}} {{#_appTitle}}| {{_appTitle}} {{/_appTitle}}">
       {{#_description}}<meta name="description" content="{{_description}}">{{/_description}}
       {{#description}}<meta name="description" content="{{description}}">{{/description}}
-      <link rel="icon" href="{{_rel}}{{{_appFaviconPath}}}{{^_appFaviconPath}}favicon.ico{{/_appFaviconPath}}">
-      <link rel="stylesheet" href="{{_rel}}public/docfx.min.css">
-      <link rel="stylesheet" href="{{_rel}}public/main.css">
-      <link rel="stylesheet" href="{{_rel}}public/menu.min.css">
-      <link rel="stylesheet" href="{{_rel}}public/font-awesome.css">
-      <meta name="docfx:navrel" content="{{_navRel}}">
-      <meta name="docfx:tocrel" content="{{_tocRel}}">
+      <link rel="icon" href="{{_virtualPath}}{{{_appFaviconPath}}}{{^_appFaviconPath}}favicon.ico{{/_appFaviconPath}}">
+      <link rel="stylesheet" href="{{_virtualPath}}public/docfx.min.css">
+      <link rel="stylesheet" href="{{_virtualPath}}public/main.css">
+      <link rel="stylesheet" href="{{_virtualPath}}public/menu.min.css">
+      <link rel="stylesheet" href="{{_virtualPath}}public/font-awesome.css">
+      <meta name="docfx:navrel" content="{{_virtualPath}}api/toc.html">
+      <meta name="docfx:tocrel" content="{{_virtualPath}}api/toc.html">
       {{#_noindex}}<meta name="searchOption" content="noindex">{{/_noindex}}
-      {{#_enableSearch}}<meta name="docfx:rel" content="{{_rel}}">{{/_enableSearch}}
+      {{#_enableSearch}}<meta name="docfx:rel" content="{{_virtualPath}}">{{/_enableSearch}}
       {{#_disableNewTab}}<meta name="docfx:disablenewtab" content="true">{{/_disableNewTab}}
       {{#_disableTocFilter}}<meta name="docfx:disabletocfilter" content="true">{{/_disableTocFilter}}
       {{#docurl}}<meta name="docfx:docurl" content="{{docurl}}">{{/docurl}}
@@ -40,8 +40,8 @@
       <meta name="loc:copy" content="{{__global.copy}}">
       <meta name="loc:downloadPdf" content="{{__global.downloadPdf}}">
 
-      <script type="module" src="./{{_rel}}public/docfx.min.js"></script>
-	  <script src="./{{_rel}}public/menu.js"></script>
+      <script type="module" src="{{_virtualPath}}public/docfx.min.js"></script>
+	  <script src="{{_virtualPath}}public/menu.js"></script>
 	  <script async src="https://code.jquery.com/jquery-3.7.1.slim.min.js" 
 	          integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
@@ -69,7 +69,7 @@
       {{^_disableNavbar}}
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
-          <a class="navbar-brand" href="{{_appLogoUrl}}{{^_appLogoUrl}}{{_rel}}index.html{{/_appLogoUrl}}">
+          <a class="navbar-brand" href="{{_appLogoUrl}}{{^_appLogoUrl}}{{_virtualPath}}{{/_appLogoUrl}}">
             {{_appName}}
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">

@@ -5,21 +5,39 @@ for %%i in (%*) do (
     if "%%i"=="--force" set force=--force
 )
 
-cd ../src
+REM error, warning, info, verbose, diagnostic
+SET LOG_LEVEL=info
+REM linux-x64
+SET RUNTIME=win-x64
+SET FRAMEWORK=net8.0
+SET CONFIGURATION=Debug
 
+cd ../src
 
 if "%force%"=="--force" (
     rmdir /S /Q api
     rmdir /S /Q ..\_site
+	
+    dotnet tool install -g docfx
+    dotnet tool update docfx -g
 )
 
-dotnet tool install -g docfx
+cd bootstrap
+
+SET PLUGINS_DIR=..\templates\aspose-modern\plugins\
 
 dotnet restore
-dotnet build -c Release -f net8.0
+dotnet build -c %CONFIGURATION% -f %FRAMEWORK%
+copy /Y Docfx.Boostrap\bin\%CONFIGURATION%\%FRAMEWORK%\Aspose.CAD.* %PLUGINS_DIR%
+copy /Y Docfx.Boostrap\bin\%CONFIGURATION%\%FRAMEWORK%\Docfx.Aspose.Plugins.* %PLUGINS_DIR%
+copy /Y Docfx.Boostrap\bin\%CONFIGURATION%\%FRAMEWORK%\LastModifiedPostProcessor.* %PLUGINS_DIR%
+copy /Y Docfx.Boostrap\bin\%CONFIGURATION%\%FRAMEWORK%\LibGit2Sharp.dll %PLUGINS_DIR%
+copy /Y Docfx.Boostrap\bin\%CONFIGURATION%\%FRAMEWORK%\HtmlAgilityPack.dll %PLUGINS_DIR%
+copy /Y Docfx.Boostrap\bin\%CONFIGURATION%\%FRAMEWORK%\runtimes\%RUNTIME%\native\* %PLUGINS_DIR%
 
+cd ..
 
-docfx metadata docfx.json
-docfx build docfx.json --verbose %serve%
+docfx metadata docfx.json --logLevel %LOG_LEVEL%
+docfx build docfx.json --logLevel %LOG_LEVEL% %serve%
 
 cd ../scripts

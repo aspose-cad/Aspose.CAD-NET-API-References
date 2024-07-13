@@ -1,11 +1,14 @@
+**/publish/
 **/node_modules/
 **/.vs/
 **/.idea/
 **/obj/
 **/bin/
+**/dist/
 **/_site/
 **/src/api/
 **/*.suo
 **/*.user
 **/*.DotSettings
 /net-reference-app--latest-docker-image
+/src/templates/aspose-modern/plugins
