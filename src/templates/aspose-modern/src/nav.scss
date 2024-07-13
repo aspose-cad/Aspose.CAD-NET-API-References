@@ -11,6 +11,11 @@
   }
 }
 
+.dropdown-menu {
+  max-height: 70vh !important;
+  overflow-y: scroll;
+}
+
 .next-article {
   display: flex;
 
@@ -61,8 +66,10 @@
 
     form {
       display: flex;
-      position: relative;
+      position: fixed;
       align-items: center;
+	  right: 2rem;
+	  top: 4.5rem;
 
       >i.bi {
         position: absolute;

@@ -6,8 +6,8 @@
         {
 		  //"src": "./",
           "files": [
-            //"bootstrap/Docfx.Boostrap/bin/Debug/net8.0/Aspose.CAD.dll"
-			"bootstrap/Docfx.Boostrap/bin/Debug/net8.0/System.Composition.Convention.dll"
+            "bootstrap/Docfx.Boostrap/bin/Debug/net8.0/Aspose.CAD.dll"
+			//"bootstrap/Docfx.Boostrap/bin/Debug/net8.0/System.Composition.Convention.dll"
           ]
         }
       ],	  
@@ -52,8 +52,10 @@
       "default",
 	  "templates/aspose-modern"
     ],
-	//"customLinkResolver": "AsposeHrefGenerator",
-    "postProcessors": ["UrlCustomizationProcessor"],
+    "postProcessors": [
+	  "ExtractSearchIndex",
+	  "UrlCustomizationProcessor"
+	],
     "globalMetadata": {
       "_appName": "Aspose.CAD .NET SDK",
       "_appTitle": "Aspose.CAD for .NET API Reference",

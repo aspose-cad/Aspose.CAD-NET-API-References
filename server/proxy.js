@@ -1,13 +1,12 @@
 const http = require('http');
-//const httpProxy = require('http-proxy');
 const compression = require('compression');
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const mime = require('mime-types');const url = require('url');
 
-//const rootNs = 'aspose.cad'
-const rootNs = 'system.composition.convention'
+const rootNs = 'aspose.cad'
+//const rootNs = 'system.composition.convention'
 
 const knownFileTypes = [
     '.html', '.css', '.js', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.ico', 
@@ -22,9 +21,7 @@ function withoutQuery(urlString) {
 }
 
 const app = express();
-//const proxy = httpProxy.createProxyServer({});
 
-// Use compression middleware
 app.use(compression());
 
 app.use((req, res) => {
@@ -66,7 +63,6 @@ app.use((req, res) => {
         return;
     }
 	
-    //proxy.web(req, res, { target: 'http://localhost:8080' });
 	const filePath = path.join(rootDir, req.url);
 
     fs.stat(filePath, (err, stats) => {
@@ -93,19 +89,3 @@ const server = http.createServer(app);
 
 console.log('Proxy server listening on port 8081');
 server.listen(8081);
-
-
-
-
-// const express = require('express');
-// const path = require('path');
-// const app = express();
-
-// const PORT = 8080;
-// const SITE_DIR = '..\\_site';
-
-// app.use('/cad/net', express.static(SITE_DIR));
-
-// app.listen(PORT, () => {
-  // console.log(`Server is running at http://localhost:${PORT}/cad/net`);
-// });

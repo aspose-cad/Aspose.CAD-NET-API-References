@@ -43,7 +43,7 @@ public class UrlCustomizationSettings
 
         if (metadata.TryGetValue("_virtualPath", out var virtualPathRaw))
         {
-            VirtualPath = (string)virtualPathRaw;
+            VirtualPath = '/' + ((string)virtualPathRaw).Trim('/') + '/';
         }
     }
 

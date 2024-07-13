@@ -24,8 +24,8 @@ public class UrlCustomizationProcessor : IPostProcessor
 
     static UrlCustomizationProcessor()
     {
-        //AsposeCadTypes = typeof(Image).Assembly.GetExportedTypes();
-        AsposeCadTypes =typeof(System.Composition.Convention.ExportConventionBuilder).Assembly.GetExportedTypes();
+        AsposeCadTypes = typeof(Image).Assembly.GetExportedTypes();
+        //AsposeCadTypes =typeof(System.Composition.Convention.ExportConventionBuilder).Assembly.GetExportedTypes();
         AsposeCadNamespaces = AsposeCadTypes.Select(x => x.Namespace).Distinct().ToArray();
     }
 
@@ -38,6 +38,9 @@ public class UrlCustomizationProcessor : IPostProcessor
     public Manifest Process(Manifest manifest, string outputFolder)
     {
         Debugger.Launch();
+
+        var indexJsonPath = Path.Combine(outputFolder, "index.json");
+        UpdateHrefsOnJson(indexJsonPath);
 
         foreach (var manifestItem in manifest.Files)
         {
@@ -55,23 +58,25 @@ public class UrlCustomizationProcessor : IPostProcessor
                     }
                     else if ( manifestItemOutputFile.Key == ".json")
                     {
-                        UpdateTocHrefs(outputFolder, manifestItemOutputFile.Value);
+                        var tocJsonPath = Path.Combine(outputFolder, manifestItemOutputFile.Value.RelativePath);
+                        UpdateHrefsOnJson(tocJsonPath);
                     }
                 }
             }
         }
 
+        Logger.LogInfo("Finalized URL customization");
+
         return manifest;
     }
 
-    private void UpdateTocHrefs(string outputFolder, OutputFileInfo manifestItemOutputFile)
+    private void UpdateHrefsOnJson(string jsonFilePath)
     {
-        var tocJsonPath = Path.Combine(outputFolder, manifestItemOutputFile.RelativePath);
-        var json = JsonConvert.DeserializeObject(File.ReadAllText(tocJsonPath)) as JToken;
+        var json = JsonConvert.DeserializeObject(File.ReadAllText(jsonFilePath)) as JToken;
 
         TraverseTocHrefs(json);
 
-        File.WriteAllText(tocJsonPath, JsonConvert.SerializeObject(json, Formatting.Indented));
+        File.WriteAllText(jsonFilePath, JsonConvert.SerializeObject(json, Formatting.Indented));
     }
 
     private void RenameOutputFiles(string outputFolder, OutputFileInfo manifestItemOutputFile)
@@ -97,7 +102,7 @@ public class UrlCustomizationProcessor : IPostProcessor
         {
             relativePath = PathLinux.Combine(
                 Path.GetDirectoryName(manifestItemOutputFile.RelativePath)!,
-                Path.GetFileName(manifestItemOutputFile.RelativePath).ToLower());
+                Path.GetFileName(relativePath).ToLower());
         }
  
         manifestItemOutputFile.RelativePath = relativePath;
@@ -119,13 +124,13 @@ public class UrlCustomizationProcessor : IPostProcessor
         foreach (var link in html.DocumentNode.SelectNodes("//a"))
         {
             var href = link.GetAttributeValue<string>("href", string.Empty);
-            link.SetAttributeValue("href", UpdateLink(href, true) ?? href);
+            link.SetAttributeValue("href", UpdateLink(href) ?? href);
         }
 
         html.Save(outputPath);
     }
 
-    private string UpdateLink(string href, bool addVirtualPath)
+    private string UpdateLink(string href)
     {
         if (string.IsNullOrEmpty(href)
                 || href.StartsWith("http:")
@@ -185,16 +190,16 @@ public class UrlCustomizationProcessor : IPostProcessor
             var noPrefix = href.Substring(prefixMatch.Length);
 
             var cadType = AsposeCadTypes.FirstOrDefault(
-                x => x.FullName!.Equals(noMember.Replace('-', '`').Replace("-ctor", ".ctor")));
+                x => x.FullName!.Equals(noMember.AsUnsafeGenericName().Replace("-ctor", ".ctor")));
 
             if (cadType != null)
             {
                 // property, method, event etc.
-                href = $"{prefixMatch.Value}{cadType.Namespace}{separator}{cadType.Name}{separator}{member}";
+                href = $"{prefixMatch.Value}{cadType.Namespace}{separator}{cadType.Name.AsSafeGenericName()}{separator}{member}";
             }
             else
             {
-                cadType = AsposeCadTypes.FirstOrDefault(x => x.FullName!.Equals(href.Replace('-', '`')));
+                cadType = AsposeCadTypes.FirstOrDefault(x => x.FullName!.Equals(href.AsUnsafeGenericName()));
                 if (cadType != null)
                 {
                     // type
@@ -229,7 +234,7 @@ public class UrlCustomizationProcessor : IPostProcessor
         // lower case
         href = href.ToLower();
 
-        return (addVirtualPath ? _settings.VirtualPath : string.Empty) + href + anchor;
+        return _settings.VirtualPath + href.TrimStart('/') + anchor;
     }
 
     private void TraverseTocHrefs(JToken token)
@@ -241,7 +246,7 @@ public class UrlCustomizationProcessor : IPostProcessor
             {
                 if (property.Name.EndsWith("href", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    property.Value = UpdateLink(property.Value.Value<string>(), false);
+                    property.Value = UpdateLink(property.Value.Value<string>());
                 }
 
                 TraverseTocHrefs(property.Value);

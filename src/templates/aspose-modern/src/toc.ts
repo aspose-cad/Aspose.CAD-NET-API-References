@@ -17,6 +17,8 @@ export type TocNode = {
  */
 export async function renderToc(): Promise<TocNode[]> {
   const tocrel = meta('docfx:tocrel')
+  const rel = meta('docfx:rel')
+  
   if (!tocrel) {
     return []
   }
@@ -65,7 +67,7 @@ export async function renderToc(): Promise<TocNode[]> {
   function initTocNodes(node: TocNode): boolean {
     let active
     if (node.href) {
-      const url = new URL(node.href, tocUrl)
+      const url = new URL(node.href, tocUrl.origin)
       node.href = url.href
       active = isExternalHref(url) ? false : isSameURL(url, window.location)
       if (active) {

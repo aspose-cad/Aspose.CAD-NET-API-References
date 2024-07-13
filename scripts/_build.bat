@@ -20,7 +20,15 @@ if "%force%"=="--force" (
 	
     dotnet tool install -g docfx
     dotnet tool update docfx -g
+	
+	cd templates
+	call npm install
+	cd ..
 )
+
+cd templates
+node build.js
+cd ..
 
 cd bootstrap
 

@@ -20,7 +20,7 @@
       <link rel="stylesheet" href="{{_virtualPath}}public/main.css">
       <link rel="stylesheet" href="{{_virtualPath}}public/menu.min.css">
       <link rel="stylesheet" href="{{_virtualPath}}public/font-awesome.css">
-      <meta name="docfx:navrel" content="{{_virtualPath}}api/toc.html">
+      <meta name="docfx:navrel" content="{{_virtualPath}}toc.html">
       <meta name="docfx:tocrel" content="{{_virtualPath}}api/toc.html">
       {{#_noindex}}<meta name="searchOption" content="noindex">{{/_noindex}}
       {{#_enableSearch}}<meta name="docfx:rel" content="{{_virtualPath}}">{{/_enableSearch}}
@@ -69,7 +69,7 @@
       {{^_disableNavbar}}
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
-          <a class="navbar-brand" href="{{_appLogoUrl}}{{^_appLogoUrl}}{{_virtualPath}}{{/_appLogoUrl}}">
+          <a class="navbar-brand" href="{{_appLogoUrl}}{{^_appLogoUrl}}/{{/_appLogoUrl}}">
             {{_appName}}
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">

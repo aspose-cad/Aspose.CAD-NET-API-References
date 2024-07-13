@@ -11,8 +11,6 @@ const yargs = require('yargs/yargs')
 const { hideBin } = require('yargs/helpers')
 const argv = yargs(hideBin(process.argv)).argv
 
-const distdir = '../templates2'
-
 const loader = {
   '.eot': 'file',
   '.svg': 'file',
@@ -23,7 +21,7 @@ const loader = {
 
 build()
   .then(() => {
-    console.log('Build finished successfully')
+    console.log('templates build finished successfully')
   })
   .catch(err => {
     console.error(err)
@@ -33,8 +31,6 @@ build()
 async function build() {
 
   await Promise.all([buildAsposeModernTemplate()])
-
-  copyToDist()
 }
 
 async function buildAsposeModernTemplate() {
@@ -50,7 +46,7 @@ async function buildAsposeModernTemplate() {
       '.css': '.min.css',
       '.js': '.min.js'
     },
-    outdir: 'aspose-modern/dist',
+    outdir: 'aspose-modern/public',
     entryPoints: [
       'aspose-modern/src/docfx.ts',
       'aspose-modern/src/search-worker.ts',
@@ -65,20 +61,5 @@ async function buildAsposeModernTemplate() {
   }
   
   await esbuild.build(config)
-}
-
-function copyToDist() {
-
-  console.log('copyToDist');
-  rmSync(distdir, { recursive: true, force: true })
-  cpSync('aspose-modern', join(distdir, 'aspose-modern'), { recursive: true, overwrite: true, filter })
-
-  function filter(src) {
-    const segments = src.split(/[/\\]/)
-    return !segments.includes('node_modules') && !segments.includes('package-lock.json') && !segments.includes('src')
-  }
-
-  function staticTocFilter(src) {
-    return filter(src) && !src.includes('toc.html')
-  }
+  cpSync('aspose-modern/static', 'aspose-modern/public', { recursive: true, overwrite: true })
 }
