@@ -10,7 +10,7 @@ SET LOG_LEVEL=info
 REM linux-x64
 SET RUNTIME=win-x64
 SET FRAMEWORK=net8.0
-SET CONFIGURATION=Debug
+SET CONFIGURATION=Release
 
 cd ../src
 
@@ -47,5 +47,10 @@ cd ..
 
 docfx metadata docfx.json --logLevel %LOG_LEVEL%
 docfx build docfx.json --logLevel %LOG_LEVEL% %serve%
+
+if not defined serve (
+    call Docfx.Aspose.Tools\bin\%CONFIGURATION%\%FRAMEWORK%\Docfx.Aspose.Tools.exe sitemap "../../_site/sitemap.xml" "../docfx.json"
+    call Docfx.Aspose.Tools\bin\%CONFIGURATION%\%FRAMEWORK%\Docfx.Aspose.Tools.exe verify "../../_site/sitemap.xml" --dry-run
+)
 
 cd ../scripts

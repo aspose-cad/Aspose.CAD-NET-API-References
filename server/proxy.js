@@ -31,16 +31,23 @@ app.use((req, res) => {
         req.url = req.url.replace('/cad/net', '');
 	}
 	
+	if (req.url == '/aspose/') {
+        console.log('Redirect');
+        res.writeHead(302, { 'Location': '/aspose.cad/' });
+        res.end();
+        return;
+	}
+	
 	req.url = withoutQuery(req.url);
 	req.url = req.url.replace(/^\/|\/$/g, '');
 	
 	///////
-	if (req.url == '/' || req.url == '') {
+	if (req.url == '/'|| req.url == 'index' || req.url == '') {
 		req.url = 'index.html';
 	}
 	//////
-	if (req.url.endsWith('toc.json.html') && req.url != 'toc.json.html') {
-		req.url = 'api/toc.json.html';
+	if (req.url.endsWith('toc.html') && req.url != 'toc.html') {
+		req.url = 'api/toc.html';
 	}
 	//////
 	else if (req.url.endsWith('toc.json') && req.url != 'toc.json') {

@@ -4,6 +4,10 @@ namespace Docfx.Aspose.Plugins;
 
 public class UrlCustomizationSettings
 {
+    public UrlCustomizationSettings()
+    {
+    }
+
     public UrlCustomizationSettings(ImmutableDictionary<string, object> metadata)
     {
         // "_suppressPrefixes": [ "/api" ],
@@ -47,13 +51,13 @@ public class UrlCustomizationSettings
         }
     }
 
-    public string[] SuppressPrefixes { get; }
+    public string[] SuppressPrefixes { get; set; }
     public string[] SuppressExtensions { get; set; }
     public bool TrailingSlash { get; set; }
     public bool LowerCaseFiles { get; set; }
     public bool CtorToClassName { get; set; }
-    public string SymbolsSeparator { get; }
-    public string VirtualPath { get; }
+    public string SymbolsSeparator { get; set; }
+    public string VirtualPath { get; set; }
 
     public string RenameCtorIfNeeded(string fileNameNoExt, bool hasDirStructure)
     {

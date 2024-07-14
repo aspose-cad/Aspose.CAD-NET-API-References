@@ -29,6 +29,16 @@ public class UrlCustomizationProcessor : IPostProcessor
         AsposeCadNamespaces = AsposeCadTypes.Select(x => x.Namespace).Distinct().ToArray();
     }
 
+    public UrlCustomizationProcessor(UrlCustomizationSettings settings)
+        : this()
+    {
+        _settings = settings;
+    }
+
+    public UrlCustomizationProcessor()
+    {
+    }
+
     public ImmutableDictionary<string, object> PrepareMetadata(ImmutableDictionary<string, object> metadata)
     {
         _settings = new UrlCustomizationSettings(metadata);
@@ -37,7 +47,9 @@ public class UrlCustomizationProcessor : IPostProcessor
 
     public Manifest Process(Manifest manifest, string outputFolder)
     {
+#if DEBUG
         Debugger.Launch();
+#endif
 
         var indexJsonPath = Path.Combine(outputFolder, "index.json");
         UpdateHrefsOnJson(indexJsonPath);
@@ -130,7 +142,7 @@ public class UrlCustomizationProcessor : IPostProcessor
         html.Save(outputPath);
     }
 
-    private string UpdateLink(string href)
+    public string UpdateLink(string href)
     {
         if (string.IsNullOrEmpty(href)
                 || href.StartsWith("http:")
@@ -153,9 +165,9 @@ public class UrlCustomizationProcessor : IPostProcessor
         // /api/* => /*
         var relSuffixMatch = HrefRelSuffixRegex.Match(href);
         href = href.Substring(relSuffixMatch.Length);
-        foreach (var preffixRaw in _settings.SuppressPrefixes)
+        foreach (var prefixRaw in _settings.SuppressPrefixes)
         {
-            var suffix = preffixRaw.TrimStart('.', '/');
+            var suffix = prefixRaw.TrimStart('.', '/');
             if (href.StartsWith(suffix))
             {
                 href = href.Substring(suffix.Length);
@@ -187,19 +199,26 @@ public class UrlCustomizationProcessor : IPostProcessor
             var member = Path.GetExtension(href).TrimStart('.');
             var noMember = Path.GetFileNameWithoutExtension(href);
             var prefixMatch = HrefRelSuffixRegex.Match(href);
-            var noPrefix = href.Substring(prefixMatch.Length);
 
             var cadType = AsposeCadTypes.FirstOrDefault(
-                x => x.FullName!.Equals(noMember.AsUnsafeGenericName().Replace("-ctor", ".ctor")));
+                x => x.FullName!.Equals(
+                    noMember.AsUnsafeGenericName().Replace("-ctor", ".ctor"),
+                    StringComparison.InvariantCultureIgnoreCase));
 
             if (cadType != null)
             {
                 // property, method, event etc.
-                href = $"{prefixMatch.Value}{cadType.Namespace}{separator}{cadType.Name.AsSafeGenericName()}{separator}{member}";
+                href = $"{prefixMatch.Value}{cadType.Namespace}" +
+                       $"{separator}{cadType.Name.AsSafeGenericName()}" +
+                       $"{separator}{member}";
             }
             else
             {
-                cadType = AsposeCadTypes.FirstOrDefault(x => x.FullName!.Equals(href.AsUnsafeGenericName()));
+                cadType = AsposeCadTypes.FirstOrDefault(
+                    x => x.FullName!.Equals(
+                        href.AsUnsafeGenericName(),
+                        StringComparison.InvariantCultureIgnoreCase));
+                
                 if (cadType != null)
                 {
                     // type
@@ -207,7 +226,9 @@ public class UrlCustomizationProcessor : IPostProcessor
                 }
                 else
                 {
-                    var cadNs = AsposeCadNamespaces.FirstOrDefault(x => x.Equals(href));
+                    var cadNs = AsposeCadNamespaces.FirstOrDefault(
+                        x => x.Equals(href, StringComparison.InvariantCultureIgnoreCase));
+                    
                     if (!string.IsNullOrEmpty(cadNs))
                     {
                         // namespace

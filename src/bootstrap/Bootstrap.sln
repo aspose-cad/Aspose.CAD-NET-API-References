@@ -1,10 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docfx.Boostrap", "Docfx.Boostrap\Docfx.Boostrap.csproj", "{15A26D7F-C3FA-44F2-A512-CC2EF53B0848}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Docfx.Boostrap", "Docfx.Boostrap\Docfx.Boostrap.csproj", "{15A26D7F-C3FA-44F2-A512-CC2EF53B0848}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docfx.Aspose.Plugins", "Docfx.Aspose.Plugins\Docfx.Aspose.Plugins.csproj", "{3641E211-9C81-42DC-B6A8-F984EF87AB2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Docfx.Aspose.Plugins", "Docfx.Aspose.Plugins\Docfx.Aspose.Plugins.csproj", "{3641E211-9C81-42DC-B6A8-F984EF87AB2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocFx.Plugin.LastModified", "..\..\docfx\plugins\DocFx.Plugin.LastModified\DocFx.Plugin.LastModified\DocFx.Plugin.LastModified.csproj", "{CCB0197E-0594-4C15-844D-70D305A3E877}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocFx.Plugin.LastModified", "..\..\docfx\plugins\DocFx.Plugin.LastModified\DocFx.Plugin.LastModified\DocFx.Plugin.LastModified.csproj", "{CCB0197E-0594-4C15-844D-70D305A3E877}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docfx.Aspose.Tools", "Docfx.Aspose.Tools\Docfx.Aspose.Tools.csproj", "{CEF85FCB-BA8D-4F67-B903-65081D03A0D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +29,15 @@ Global
 		{CCB0197E-0594-4C15-844D-70D305A3E877}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCB0197E-0594-4C15-844D-70D305A3E877}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCB0197E-0594-4C15-844D-70D305A3E877}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEF85FCB-BA8D-4F67-B903-65081D03A0D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEF85FCB-BA8D-4F67-B903-65081D03A0D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEF85FCB-BA8D-4F67-B903-65081D03A0D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEF85FCB-BA8D-4F67-B903-65081D03A0D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7BBCA41D-A7F6-4F9B-B19E-097E0D95B98E}
 	EndGlobalSection
 EndGlobal
