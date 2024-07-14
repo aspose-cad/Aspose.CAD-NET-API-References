@@ -27,7 +27,7 @@ public class VerifyModeArgs : CommandLineArgsBase
     [Value(0, MetaName = "sitemap", Required = true, HelpText = "path to sitemap.xml file.")]
     public string Sitemap { get; set; }
 
-    [Value(1, MetaName = "server", Required = false, HelpText = "absolute root url of a server")]
+    [Option('s', "server", Required = false, HelpText = "absolute root url of a server")]
     public string ServerUrl { get; set; }
 
     [Option("dry-run", Required = false, Default = false, HelpText = "if set to true - error will not be raised")]

@@ -49,8 +49,8 @@ docfx metadata docfx.json --logLevel %LOG_LEVEL%
 docfx build docfx.json --logLevel %LOG_LEVEL% %serve%
 
 if not defined serve (
-    call Docfx.Aspose.Tools\bin\%CONFIGURATION%\%FRAMEWORK%\Docfx.Aspose.Tools.exe sitemap "../../_site/sitemap.xml" "../docfx.json"
-    call Docfx.Aspose.Tools\bin\%CONFIGURATION%\%FRAMEWORK%\Docfx.Aspose.Tools.exe verify "../../_site/sitemap.xml" --dry-run
+    call bootstrap\Docfx.Aspose.Tools\bin\%CONFIGURATION%\%FRAMEWORK%\Docfx.Aspose.Tools.exe sitemap "../_site/sitemap.xml" "docfx.json"
+REM    call bootstrap\Docfx.Aspose.Tools\bin\%CONFIGURATION%\%FRAMEWORK%\Docfx.Aspose.Tools.exe verify "../_site/sitemap.xml" --server "http://localhost:8081" --dry-run
 )
 
 cd ../scripts

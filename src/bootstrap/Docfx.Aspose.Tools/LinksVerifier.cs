@@ -32,7 +32,7 @@ public class LinksVerifier
             XElement locElement = urlElement.Element(ns + "loc");
             if (locElement != null)
             {
-                Console.WriteLine($"Processing sitemap link: {locElement.Value}...");
+                //Console.WriteLine($"Processing sitemap link: {locElement.Value}...");
                 var newUrl = ConvertUrl(locElement.Value);
                 await ProcessUrl(newUrl, null);
             }
@@ -92,7 +92,7 @@ public class LinksVerifier
                             .Distinct()
                             .ToList();
 
-        Console.WriteLine($"Found {links.Count} links on {url}...");
+        //Console.WriteLine($"Found {links.Count} links on {url}...");
         
         // await Task.WhenAll(links
         //     .AsParallel()
