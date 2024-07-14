@@ -9,8 +9,9 @@ const rootNs = 'aspose.cad'
 //const rootNs = 'system.composition.convention'
 
 const knownFileTypes = [
-    '.html', '.css', '.js', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.ico', 
-	'.json', '.ts', '.map', '.scss', '.woff', '.woff2', '.ttf', '.otf', '.eot'
+    '.html', '.css', '.js', '.png', '.jpg', '.jpeg', '.gif', 
+	'.svg', '.ico', '.json', '.ts', '.map', '.scss', '.woff', 
+	'.woff2', '.ttf', '.otf', '.eot', '.xml'
 ];
 
 const rootDir = path.resolve(__dirname, '../_site');
