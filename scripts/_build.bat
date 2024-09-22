@@ -30,8 +30,6 @@ cd templates
 node build.js
 cd ..
 
-cd bootstrap
-
 SET PLUGINS_DIR=..\templates\aspose-modern\plugins\
 
 dotnet restore
@@ -42,8 +40,6 @@ copy /Y Docfx.Boostrap\bin\%CONFIGURATION%\%FRAMEWORK%\LastModifiedPostProcessor
 copy /Y Docfx.Boostrap\bin\%CONFIGURATION%\%FRAMEWORK%\LibGit2Sharp.dll %PLUGINS_DIR%
 copy /Y Docfx.Boostrap\bin\%CONFIGURATION%\%FRAMEWORK%\HtmlAgilityPack.dll %PLUGINS_DIR%
 copy /Y Docfx.Boostrap\bin\%CONFIGURATION%\%FRAMEWORK%\runtimes\%RUNTIME%\native\* %PLUGINS_DIR%
-
-cd ..
 
 echo "=============== METADATA ===================="
 docfx metadata docfx.json --logLevel %LOG_LEVEL%

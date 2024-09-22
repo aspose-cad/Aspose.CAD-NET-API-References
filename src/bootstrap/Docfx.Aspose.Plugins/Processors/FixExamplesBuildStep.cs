@@ -8,7 +8,7 @@ using YamlDotNet.RepresentationModel;
 
 namespace Docfx.Aspose.Plugins.Processors;
 
-[Export(nameof(MetadataPostProcessor), typeof(IDocumentBuildStep))]
+//[Export(nameof(MetadataPostProcessor), typeof(IDocumentBuildStep))]
 public class FixExamplesBuildStep : IDocumentBuildStep
 {
     public string Name => nameof(FixExamplesBuildStep);

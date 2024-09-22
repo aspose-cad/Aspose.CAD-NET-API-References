@@ -8,7 +8,7 @@ using YamlDotNet.RepresentationModel;
 
 namespace Docfx.Aspose.Plugins.Processors;
 
-[Export(typeof(IDocumentProcessor))]
+///[Export(typeof(IDocumentProcessor))]
 public class MetadataPostProcessor : IDocumentProcessor
 {
     private static readonly List<IDocumentBuildStep> _steps = 
@@ -19,7 +19,7 @@ public class MetadataPostProcessor : IDocumentProcessor
     public string Name => nameof(MetadataPostProcessor);
     
     [ImportMany(nameof(MetadataPostProcessor))]
-    public IEnumerable<IDocumentBuildStep> BuildSteps { get; set; } = _steps;
+    public IEnumerable<IDocumentBuildStep> BuildSteps => _steps;
     
     public ProcessingPriority GetProcessingPriority(FileAndType file)
     {

@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Docfx.Boostrap", "Docfx.Boostrap\Docfx.Boostrap.csproj", "{15A26D7F-C3FA-44F2-A512-CC2EF53B0848}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Docfx.Boostrap", "bootstrap\Docfx.Boostrap\Docfx.Boostrap.csproj", "{15A26D7F-C3FA-44F2-A512-CC2EF53B0848}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Docfx.Aspose.Plugins", "Docfx.Aspose.Plugins\Docfx.Aspose.Plugins.csproj", "{3641E211-9C81-42DC-B6A8-F984EF87AB2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Docfx.Aspose.Plugins", "bootstrap\Docfx.Aspose.Plugins\Docfx.Aspose.Plugins.csproj", "{3641E211-9C81-42DC-B6A8-F984EF87AB2B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocFx.Plugin.LastModified", "..\..\docfx\plugins\DocFx.Plugin.LastModified\DocFx.Plugin.LastModified\DocFx.Plugin.LastModified.csproj", "{CCB0197E-0594-4C15-844D-70D305A3E877}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocFx.Plugin.LastModified", "..\docfx\plugins\DocFx.Plugin.LastModified\DocFx.Plugin.LastModified\DocFx.Plugin.LastModified.csproj", "{CCB0197E-0594-4C15-844D-70D305A3E877}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docfx.Aspose.Tools", "Docfx.Aspose.Tools\Docfx.Aspose.Tools.csproj", "{CEF85FCB-BA8D-4F67-B903-65081D03A0D8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docfx.Aspose.Tools", "bootstrap\Docfx.Aspose.Tools\Docfx.Aspose.Tools.csproj", "{CEF85FCB-BA8D-4F67-B903-65081D03A0D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
