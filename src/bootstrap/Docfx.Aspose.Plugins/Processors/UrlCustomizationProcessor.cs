@@ -1,7 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Composition;
 using System.Diagnostics;
-using System.Reflection;
 using System.Text.RegularExpressions;
 using Aspose.CAD;
 using Docfx.Common;
@@ -10,7 +9,7 @@ using HtmlAgilityPack;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace Docfx.Aspose.Plugins;
+namespace Docfx.Aspose.Plugins.Processors;
 
 [Export(nameof(UrlCustomizationProcessor), typeof(IPostProcessor))]
 public class UrlCustomizationProcessor : IPostProcessor

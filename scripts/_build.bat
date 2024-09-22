@@ -6,7 +6,7 @@ for %%i in (%*) do (
 )
 
 REM error, warning, info, verbose, diagnostic
-SET LOG_LEVEL=info
+SET LOG_LEVEL=verbose
 REM linux-x64
 SET RUNTIME=win-x64
 SET FRAMEWORK=net8.0
@@ -45,7 +45,10 @@ copy /Y Docfx.Boostrap\bin\%CONFIGURATION%\%FRAMEWORK%\runtimes\%RUNTIME%\native
 
 cd ..
 
+echo "=============== METADATA ===================="
 docfx metadata docfx.json --logLevel %LOG_LEVEL%
+
+echo "================ BUILD ======================"
 docfx build docfx.json --logLevel %LOG_LEVEL% %serve%
 
 if not defined serve (

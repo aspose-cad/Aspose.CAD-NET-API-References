@@ -1,5 +1,6 @@
 ﻿using System.Xml.Linq;
 using Docfx.Aspose.Plugins;
+using Docfx.Aspose.Plugins.Processors;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 

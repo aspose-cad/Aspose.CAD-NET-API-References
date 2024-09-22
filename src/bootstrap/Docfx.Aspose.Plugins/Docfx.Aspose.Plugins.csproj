@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
+        <TargetFrameworks>net8.0;net6.0</TargetFrameworks>
         <ImplicitUsings>enable</ImplicitUsings>
         <LangVersion>latest</LangVersion>
         <Nullable>disable</Nullable>
@@ -15,6 +15,13 @@
         <PackageReference Include="Docfx.Plugins" Version="$(DocfxVersion)" />
         <PackageReference Include="Docfx.MarkdigEngine.Extensions" Version="$(DocfxVersion)" />
         <!--<PackageReference Include="memberpage.plugins" Version="2.59.4"/>-->
+
+<!--        <OutputDll Include="$(OutputPath)$(AssemblyName).dll" />-->
+<!--        <OutputDll Include="$(OutputPath)Aspose.CAD.dll" />-->
     </ItemGroup>
+
+<!--    <Target Name="CopyDllToOutputDirectory" AfterTargets="Build">-->
+<!--        <Copy SourceFiles="@(OutputDll)" DestinationFolder="C:\code\ASP\GITHUB\Aspose.CAD-NET-API-References\docfx\src\src\docfx\bin\Debug\net6.0" />-->
+<!--    </Target>-->
     
 </Project>

@@ -8,6 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="*"/>
         <PackageReference Include="Aspose.CAD" Version="*"/>
         <ProjectReference Include="..\..\..\docfx\plugins\DocFx.Plugin.LastModified\DocFx.Plugin.LastModified\DocFx.Plugin.LastModified.csproj"/>
         <ProjectReference Include="..\Docfx.Aspose.Plugins\Docfx.Aspose.Plugins.csproj"/>
