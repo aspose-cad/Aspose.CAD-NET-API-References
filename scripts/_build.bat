@@ -30,7 +30,7 @@ cd templates
 node build.js
 cd ..
 
-SET PLUGINS_DIR=..\templates\aspose-modern\plugins\
+SET PLUGINS_DIR=templates\aspose-modern\plugins\
 
 dotnet restore
 dotnet build -c %CONFIGURATION% -f %FRAMEWORK%
