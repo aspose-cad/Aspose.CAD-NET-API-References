@@ -26,9 +26,9 @@ if "%force%"=="--force" (
 	cd ..
 )
 
-cd templates
-node build.js
-cd ..
+cd ../scripts
+CALL _build-template.bat
+cd ../src
 
 SET PLUGINS_DIR=templates\aspose-modern\plugins\
 
@@ -41,15 +41,17 @@ copy /Y Docfx.Boostrap\bin\%CONFIGURATION%\%FRAMEWORK%\LibGit2Sharp.dll %PLUGINS
 copy /Y Docfx.Boostrap\bin\%CONFIGURATION%\%FRAMEWORK%\HtmlAgilityPack.dll %PLUGINS_DIR%
 copy /Y Docfx.Boostrap\bin\%CONFIGURATION%\%FRAMEWORK%\runtimes\%RUNTIME%\native\* %PLUGINS_DIR%
 
-echo "=============== METADATA ===================="
-docfx metadata docfx.json --logLevel %LOG_LEVEL%
+cd ../scripts
+CALL _docfx-metadata.bat %LOG_LEVEL%
+cd ../src
 
-echo "================ BUILD ======================"
-docfx build docfx.json --logLevel %LOG_LEVEL% %serve%
+cd ../scripts
+CALL _docfx-build.bat %LOG_LEVEL% %serve%
+cd ../src
 
 if not defined serve (
-    call bootstrap\Docfx.Aspose.Tools\bin\%CONFIGURATION%\%FRAMEWORK%\Docfx.Aspose.Tools.exe sitemap "../_site/sitemap.xml" "docfx.json"
-REM    call bootstrap\Docfx.Aspose.Tools\bin\%CONFIGURATION%\%FRAMEWORK%\Docfx.Aspose.Tools.exe verify "../_site/sitemap.xml" --server "http://localhost:8081" --dry-run
+    CALL bootstrap\Docfx.Aspose.Tools\bin\%CONFIGURATION%\%FRAMEWORK%\Docfx.Aspose.Tools.exe sitemap "../_site/sitemap.xml" "docfx.json"
+REM    CALL bootstrap\Docfx.Aspose.Tools\bin\%CONFIGURATION%\%FRAMEWORK%\Docfx.Aspose.Tools.exe verify "../_site/sitemap.xml" --server "http://localhost:8081" --dry-run
 )
 
 cd ../scripts

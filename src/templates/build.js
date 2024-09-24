@@ -40,7 +40,7 @@ async function buildAsposeModernTemplate() {
     bundle: true,
     format: 'esm',
     splitting: true,
-    minify: true,
+    minify: true, // false
     sourcemap: true,
     outExtension: {
       '.css': '.min.css',

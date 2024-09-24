@@ -1,6 +1,7 @@
 using System.Collections.Concurrent;
 using HtmlAgilityPack;
 using System.Xml.Linq;
+using Docfx.Aspose.Tools.Args;
 using Newtonsoft.Json;
 
 namespace Docfx.Aspose.Tools;

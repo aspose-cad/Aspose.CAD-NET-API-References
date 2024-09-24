@@ -1,6 +1,7 @@
 ﻿using System.Xml.Linq;
 using Docfx.Aspose.Plugins;
 using Docfx.Aspose.Plugins.Processors;
+using Docfx.Aspose.Tools.Args;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -19,23 +20,8 @@ public class SitemapProcessor
     {
         XDocument doc = XDocument.Parse(File.ReadAllText(_opts.Sitemap));
         XNamespace ns = "http://www.sitemaps.org/schemas/sitemap/0.9";
-
-        var docfxJson = JsonConvert.DeserializeObject(File.ReadAllText(_opts.Docfx)) as JObject;
-        var settings = new UrlCustomizationSettings()
-        {
-            LowerCaseFiles = (bool)docfxJson.SelectToken("build.globalMetadata._lowerCaseFiles"),
-            SuppressExtensions = ((JArray)docfxJson.SelectToken("build.globalMetadata._suppressExtensions"))
-                .Select(x => x.Value<string>())
-                .ToArray(),
-            SuppressPrefixes = ((JArray)docfxJson.SelectToken("build.globalMetadata._suppressPrefixes"))
-                .Select(x => x.Value<string>())
-                .ToArray(),
-            SymbolsSeparator = (string)docfxJson.SelectToken("build.globalMetadata._symbolsSeparator"),
-            TrailingSlash = (bool)docfxJson.SelectToken("build.globalMetadata._trailingSlash"),
-            VirtualPath = (string)docfxJson.SelectToken("build.globalMetadata._virtualPath"),
-            CtorToClassName = (bool)docfxJson.SelectToken("build.globalMetadata._ctorToClassName")
-        };
-
+        
+        var settings = new UrlCustomizationSettings(_opts.Docfx);
         var processor = new UrlCustomizationProcessor(settings);
 
         foreach (XElement urlElement in doc.Root.Elements(ns + "url"))

@@ -1,4 +1,6 @@
 ﻿using System.Collections.Immutable;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Docfx.Aspose.Plugins;
 
@@ -50,7 +52,23 @@ public class UrlCustomizationSettings
             VirtualPath = '/' + ((string)virtualPathRaw).Trim('/') + '/';
         }
     }
-
+    
+    public UrlCustomizationSettings(string docfxFilePath)
+    {
+        var docfxJson = JsonConvert.DeserializeObject(File.ReadAllText(docfxFilePath)) as JObject;
+        LowerCaseFiles = (bool)docfxJson.SelectToken("build.globalMetadata._lowerCaseFiles");
+        SuppressExtensions = ((JArray)docfxJson.SelectToken("build.globalMetadata._suppressExtensions"))
+            .Select(x => x.Value<string>())
+            .ToArray();
+        SuppressPrefixes = ((JArray)docfxJson.SelectToken("build.globalMetadata._suppressPrefixes"))
+            .Select(x => x.Value<string>())
+            .ToArray();
+        SymbolsSeparator = (string)docfxJson.SelectToken("build.globalMetadata._symbolsSeparator");
+        TrailingSlash = (bool)docfxJson.SelectToken("build.globalMetadata._trailingSlash");
+        VirtualPath = (string)docfxJson.SelectToken("build.globalMetadata._virtualPath");
+        CtorToClassName = (bool)docfxJson.SelectToken("build.globalMetadata._ctorToClassName");
+    }
+    
     public string[] SuppressPrefixes { get; set; }
     public string[] SuppressExtensions { get; set; }
     public bool TrailingSlash { get; set; }

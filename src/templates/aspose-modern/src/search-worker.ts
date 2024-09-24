@@ -17,7 +17,14 @@ let search: (q: string) => SearchHit[]
 
 async function loadIndex({ lunrLanguages }: { lunrLanguages?: string[] }) {
   const { index, data } = await loadIndexCore()
-  search = q => index.search(q).map(({ ref }) => data[ref])
+  search = function (q)
+  {
+    return index.search(q).map(function ({ ref })
+    {
+      return data[ref];
+    })
+  };
+  
   postMessage({ e: 'index-ready' })
 
   async function loadIndexCore() {

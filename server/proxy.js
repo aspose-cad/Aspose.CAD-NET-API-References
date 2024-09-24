@@ -53,7 +53,7 @@ app.use((req, res) => {
 	req.url = withoutQuery(req.url);
 	req.url = req.url.replace(/^\//g, '');
 	
-	if (req.url.startsWith('..')) {
+	if (req.url.includes('..')) {
 		console.log('HACK ATTEMPT');
         res.writeHead(404, { 'Content-Type': 'text/plain' });
         res.end('Not Found');
