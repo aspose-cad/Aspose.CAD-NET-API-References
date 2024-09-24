@@ -11,3 +11,6 @@
 [submodule "docfx/plugins/DocFx.Plugin.LastModified"]
 	path = docfx/plugins/DocFx.Plugin.LastModified
 	url = https://github.com/Still34/DocFx.Plugin.LastModified
+[submodule "deployment-argocd"]
+	path = deployment-argocd
+	url = https://git.dev.dynabic.com/ck8s/cad/argo-cd-deployments.git

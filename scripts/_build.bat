@@ -49,6 +49,8 @@ cd ../scripts
 CALL _docfx-build.bat %LOG_LEVEL% %serve%
 cd ../src
 
+CALL bootstrap\Docfx.Aspose.Tools\bin\%CONFIGURATION%\%FRAMEWORK%\Docfx.Aspose.Tools.exe index "../_site/index.json" "docfx.json"
+
 if not defined serve (
     CALL bootstrap\Docfx.Aspose.Tools\bin\%CONFIGURATION%\%FRAMEWORK%\Docfx.Aspose.Tools.exe sitemap "../_site/sitemap.xml" "docfx.json"
 REM    CALL bootstrap\Docfx.Aspose.Tools\bin\%CONFIGURATION%\%FRAMEWORK%\Docfx.Aspose.Tools.exe verify "../_site/sitemap.xml" --server "http://localhost:8081" --dry-run
