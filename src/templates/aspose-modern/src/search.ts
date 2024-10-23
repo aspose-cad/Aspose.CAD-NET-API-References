@@ -106,8 +106,8 @@ export async function enableSearch() {
         <div class="search-list">${loc('searchResultsCount', { count: hits.length.toString(), query })}</div>
         <div class="sr-items">${curHits.map(hit => {
           const currentUrl = window.location.href
-          const itemRawHref = relativeUrlToAbsoluteUrl(currentUrl, relHref + hit.href)
-          const itemHref = relHref + hit.href + '?q=' + query
+          const itemRawHref = relativeUrlToAbsoluteUrl(currentUrl, /*relHref +*/ hit.href)
+          const itemHref = /*relHref +*/ hit.href + '?q=' + query
           const itemBrief = extractContentBrief(hit.keywords)
 
           return html`
