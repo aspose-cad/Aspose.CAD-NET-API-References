@@ -14,6 +14,9 @@ namespace Docfx.Aspose.Plugins.Processors;
 [Export(nameof(UrlCustomizationProcessor), typeof(IPostProcessor))]
 public class UrlCustomizationProcessor : IPostProcessor
 {
+    private static readonly Regex VersionTimestampRegex = new Regex(
+        "API Reference Version\\: [a-zA-Z0-9]+", RegexOptions.Compiled);
+    
     private static readonly Regex HrefRelSuffixRegex = new Regex("^([\\./]+)", RegexOptions.Compiled);
 
     private static readonly Type[] AsposeCadTypes;
@@ -55,6 +58,7 @@ public class UrlCustomizationProcessor : IPostProcessor
         Debugger.Launch();
 #endif
         
+        UpdateVersionTimestamp(outputFolder);
         UpdateHrefsOnJson(outputFolder);
 
         foreach (var manifestItem in manifest.Files)
@@ -85,7 +89,54 @@ public class UrlCustomizationProcessor : IPostProcessor
 
         return manifest;
     }
-
+    
+    public void UpdateVersionTimestamp(string outputFolder)
+    {
+        var indexFilePath = Path.Combine(outputFolder, "index.html");
+        var html = File.ReadAllText(indexFilePath);
+        
+        var gitTag = GetGitCommit(outputFolder);
+        
+        html = VersionTimestampRegex.Replace(html, _ => "API Reference Version: " + gitTag);
+        File.WriteAllText(indexFilePath, html);
+    }
+    
+    private string GetGitCommit(string absPathDir)
+    {
+        var gitDir = absPathDir;
+        
+        while (!Directory.Exists(Path.Combine(gitDir, ".git")))
+        {
+            gitDir = Directory.GetParent(gitDir)?.FullName;
+            if (gitDir == null)
+            {
+                throw new InvalidOperationException("Not a git repository");
+            }
+        }
+        
+        var processInfo = new ProcessStartInfo("git", "rev-parse HEAD")
+        {
+            WorkingDirectory = gitDir,
+            RedirectStandardOutput = true,
+            RedirectStandardError = true,
+            UseShellExecute = false,
+            CreateNoWindow = true
+        };
+        
+        using (var process = System.Diagnostics.Process.Start(processInfo))
+        {
+            var output = process!.StandardOutput.ReadToEnd();
+            process.WaitForExit();
+            
+            if (process.ExitCode != 0)
+            {
+                throw new InvalidOperationException($"Git command failed: {process.StandardError.ReadToEnd()}");
+            }
+            
+            return output.Trim();
+        }
+    }
+    
     public void UpdateHrefsOnJson(string outputFolder)
     {
         var jsonFilePath = Path.Combine(outputFolder, "index.json");

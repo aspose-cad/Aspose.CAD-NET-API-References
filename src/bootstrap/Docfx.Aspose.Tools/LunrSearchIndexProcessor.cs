@@ -21,6 +21,7 @@ public class LunrSearchIndexProcessor
     public int Process()
     {
         _urlCustomizationProcessor.UpdateHrefsOnJson(Path.GetDirectoryName(_opts.Lunr));
+        //_urlCustomizationProcessor.UpdateVersionTimestamp(Path.GetDirectoryName(_opts.Lunr));
         return 0;
     }
 }
