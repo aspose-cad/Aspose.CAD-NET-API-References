@@ -23,7 +23,12 @@ public class UrlCustomizationProcessor : IPostProcessor
 
     static UrlCustomizationProcessor()
     {
-        AsposeCadTypes = typeof(Image).Assembly.GetExportedTypes();
+        AsposeCadTypes = typeof(Image).Assembly
+            .GetExportedTypes()
+            .SelectMany(x => x.GetNestedTypes().Union([x]))
+            .Distinct()
+            .ToArray();
+        
         //AsposeCadTypes =typeof(System.Composition.Convention.ExportConventionBuilder).Assembly.GetExportedTypes();
         AsposeCadNamespaces = AsposeCadTypes.Select(x => x.Namespace).Distinct().ToArray();
     }
@@ -49,9 +54,8 @@ public class UrlCustomizationProcessor : IPostProcessor
 #if DEBUG
         Debugger.Launch();
 #endif
-
-        var indexJsonPath = Path.Combine(outputFolder, "index.json");
-        UpdateHrefsOnJson(indexJsonPath);
+        
+        UpdateHrefsOnJson(outputFolder);
 
         foreach (var manifestItem in manifest.Files)
         {
@@ -62,7 +66,8 @@ public class UrlCustomizationProcessor : IPostProcessor
                 {
                     if (manifestItemOutputFile.Key == ".html")
                     {
-                        var sourcePath = PathLinux.Combine(manifest.SourceBasePath, manifestItem.SourceRelativePath);
+                        var sourcePath = PathLinux.Combine(
+                            manifest.SourceBasePath, manifestItem.SourceRelativePath);
 
                         UpdateRelativeLinks(outputFolder, manifestItemOutputFile.Value);
                         RenameOutputFiles(outputFolder, manifestItemOutputFile.Value);
@@ -81,11 +86,12 @@ public class UrlCustomizationProcessor : IPostProcessor
         return manifest;
     }
 
-    private void UpdateHrefsOnJson(string jsonFilePath)
+    public void UpdateHrefsOnJson(string outputFolder)
     {
+        var jsonFilePath = Path.Combine(outputFolder, "index.json");
         var json = JsonConvert.DeserializeObject(File.ReadAllText(jsonFilePath)) as JToken;
 
-        TraverseTocHrefs(json);
+        TraverseTocHrefs(json, true);
 
         File.WriteAllText(jsonFilePath, JsonConvert.SerializeObject(json, Formatting.Indented));
     }
@@ -201,8 +207,11 @@ public class UrlCustomizationProcessor : IPostProcessor
 
             var cadType = AsposeCadTypes.FirstOrDefault(
                 x => x.FullName!.Equals(
-                    noMember.AsUnsafeGenericName().Replace("-ctor", ".ctor"),
-                    StringComparison.InvariantCultureIgnoreCase));
+                        noMember.AsUnsafeGenericName().Replace("-ctor", ".ctor"),
+                        StringComparison.InvariantCultureIgnoreCase)
+                    || x.FullName!.Equals(
+                        noMember.AsUnsafeGenericName().Replace("-ctor", ".ctor").ReplaceLast(".", "+"),
+                        StringComparison.InvariantCultureIgnoreCase));
 
             if (cadType != null)
             {
@@ -257,26 +266,46 @@ public class UrlCustomizationProcessor : IPostProcessor
         return _settings.VirtualPath + href.TrimStart('/') + anchor;
     }
 
-    private void TraverseTocHrefs(JToken token)
+    private void TraverseTocHrefs(JToken token, bool processRootPropertyNames)
     {
         if (token.Type == JTokenType.Object)
         {
             var obj = (JObject)token;
-            foreach (var property in obj.Properties())
+            foreach (var property in obj.Properties().ToList())
             {
-                if (property.Name.EndsWith("href", StringComparison.InvariantCultureIgnoreCase))
+                if (property.Name == "href")
                 {
-                    property.Value = UpdateLink(property.Value.Value<string>());
+                    var value = property.Value.Value<string>();
+                    if (value.EndsWith(".html"))
+                    {
+                        property.Value = UpdateLink(value);
+                    }
+                }
+                
+                if (processRootPropertyNames && property.Name.EndsWith(".html"))
+                {
+                    var oldName = property.Name;
+                    var value = property.Value;
+                    
+                    obj.Remove(oldName);
+                    
+                    var prepared = property
+                        .Name
+                        .Replace("/cad/net/", string.Empty)
+                        .Replace("api/cad/net/", string.Empty);
+                        
+                    var newName = UpdateLink(prepared);
+                    obj.Add(newName, value);
                 }
 
-                TraverseTocHrefs(property.Value);
+                TraverseTocHrefs(property.Value, false);
             }
         }
         else if (token.Type == JTokenType.Array)
         {
             foreach (var item in (JArray)token)
             {
-                TraverseTocHrefs(item);
+                TraverseTocHrefs(item, false);
             }
         }
     }

@@ -17,4 +17,15 @@ public static class StringExtensions
     {
         return symbolName.Replace('-', '`');
     }
+    
+    public static string ReplaceLast(this string symbolName, string old, string @new)
+    {
+        var index = symbolName.LastIndexOf(old);
+        if (index >= 0)
+        {
+            return symbolName.Remove(index) + @new + symbolName.Substring(index + old.Length);
+        }
+        
+        return symbolName;
+    }
 }
