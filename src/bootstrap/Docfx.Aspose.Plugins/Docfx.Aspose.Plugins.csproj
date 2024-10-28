@@ -6,6 +6,7 @@
         <LangVersion>latest</LangVersion>
         <Nullable>disable</Nullable>
         <DocfxVersion>2.77.0</DocfxVersion>
+        <RestorePackagesWithLockFile>false</RestorePackagesWithLockFile>
     </PropertyGroup>
     
     <ItemGroup>

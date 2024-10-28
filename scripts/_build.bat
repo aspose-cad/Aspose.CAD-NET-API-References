@@ -32,7 +32,9 @@ cd ../src
 
 SET PLUGINS_DIR=templates\aspose-modern\plugins\
 
-dotnet restore
+dotnet nuget locals all --clear
+dotnet restore --no-cache
+
 dotnet build -c %CONFIGURATION% -f %FRAMEWORK%
 copy /Y Docfx.Boostrap\bin\%CONFIGURATION%\%FRAMEWORK%\Aspose.CAD.* %PLUGINS_DIR%
 copy /Y Docfx.Boostrap\bin\%CONFIGURATION%\%FRAMEWORK%\Docfx.Aspose.Plugins.* %PLUGINS_DIR%

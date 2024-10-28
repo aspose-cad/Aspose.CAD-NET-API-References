@@ -14,8 +14,14 @@ namespace Docfx.Aspose.Plugins.Processors;
 [Export(nameof(UrlCustomizationProcessor), typeof(IPostProcessor))]
 public class UrlCustomizationProcessor : IPostProcessor
 {
-    private static readonly Regex VersionTimestampRegex = new Regex(
+    private static readonly Regex PackageVersionTemplateRegex = new Regex(
+        "__VERSION__", RegexOptions.Compiled);
+    
+    private static readonly Regex GitVersionTimestampRegex = new Regex(
         "API Reference Version\\: [a-zA-Z0-9]+", RegexOptions.Compiled);
+    
+    private static readonly Regex GitVersionTemplateRegex = new Regex(
+        "__GIT_COMMIT__", RegexOptions.Compiled);
     
     private static readonly Regex HrefRelSuffixRegex = new Regex("^([\\./]+)", RegexOptions.Compiled);
 
@@ -59,6 +65,7 @@ public class UrlCustomizationProcessor : IPostProcessor
 #endif
         
         UpdateVersionTimestamp(outputFolder);
+        UpdateVersionOnIndex(outputFolder);
         UpdateHrefsOnJson(outputFolder);
 
         foreach (var manifestItem in manifest.Files)
@@ -97,7 +104,21 @@ public class UrlCustomizationProcessor : IPostProcessor
         
         var gitTag = GetGitCommit(outputFolder);
         
-        html = VersionTimestampRegex.Replace(html, _ => "API Reference Version: " + gitTag);
+        html = GitVersionTimestampRegex.Replace(html, _ => "API Reference Version: " + gitTag);
+        html = GitVersionTemplateRegex.Replace(html, _ => gitTag);
+        
+        File.WriteAllText(indexFilePath, html);
+    }
+    
+    public void UpdateVersionOnIndex(string outputFolder)
+    {
+        var indexFilePath = Path.Combine(outputFolder, "index.html");
+        var html = File.ReadAllText(indexFilePath);
+        
+        var packageVersion = typeof(Image).Assembly.GetName().Version!.ToString(2);
+        
+        html = PackageVersionTemplateRegex.Replace(html, _ => packageVersion);
+        
         File.WriteAllText(indexFilePath, html);
     }
     
