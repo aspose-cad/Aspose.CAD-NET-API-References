@@ -102,21 +102,30 @@ export async function enableSearch() {
       const start = page * numPerPage
       const curHits = hits.slice(start, start + numPerPage)
 
+      window.lunrSearchQuery = query;
+
       const items = html`
         <div class="search-list">${loc('searchResultsCount', { count: hits.length.toString(), query })}</div>
-        <div class="sr-items">${curHits.map(hit => {
+        <div class="sr-items">${curHits.reduce((acc, hit) => {
+          if (!acc.nullIsLogged) {
+              console.log("Null hit found for search " + window.lunrSearchQuery);
+              acc.nullIsLogged = true;
+              return acc;
+          }
           const currentUrl = window.location.href
           const itemRawHref = relativeUrlToAbsoluteUrl(currentUrl, /*relHref +*/ hit.href)
           const itemHref = /*relHref +*/ hit.href + '?q=' + query
           const itemBrief = extractContentBrief(hit.keywords)
 
-          return html`
+          acc.htmls.push(html`
             <div class="sr-item">
               <div class="item-title"><a href="${itemHref}" target="_blank" rel="noopener noreferrer">${mark(hit.title, query)}</a></div>
               <div class="item-href">${mark(itemRawHref, query)}</div>
               <div class="item-brief">${mark(itemBrief, query)}</div>
-            </div>`
-          })}
+            </div>`)
+
+          return acc;
+        }, { htmls: [], nullLogged: false }).htmls}
         </div>`
 
       return html`${items} ${renderPagination()}`

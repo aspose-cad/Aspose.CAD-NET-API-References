@@ -76,7 +76,7 @@ app.use((req, res) => {
     else if (req.url.startsWith(rootNs)) {
 		if (!req.url.endsWith('/')) {
 			console.log('Redirect');
-            res.writeHead(301, { 'Location': req.url + '/' });
+            res.writeHead(301, { 'Location': req.originalUrl + '/' });
             res.end();
 			return;
 		}
@@ -87,7 +87,7 @@ app.use((req, res) => {
 	//////
 	//else if (!KNOWN_FILE_TYPES.includes(path.extname(req.url))) {
 	//	console.log('Redirect');
-    //    res.writeHead(301, { 'Location': req.url + '/' });
+    //    res.writeHead(301, { 'Location': req.originalUrl + '/' });
     //    res.end();
     //    return;
     //}

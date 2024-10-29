@@ -19,10 +19,18 @@ async function loadIndex({ lunrLanguages }: { lunrLanguages?: string[] }) {
   const { index, data } = await loadIndexCore()
   search = function (q)
   {
-    return index.search(q).map(function ({ ref })
-    {
-      return data[ref];
-    })
+    const results = [];
+
+    index.search(q).forEach(function ({ ref }) {
+      if (data[ref]) {
+        results.push(data[ref]);
+      }
+      else {
+        console.log('search data doesn\'t have item for ' + ref);
+      }
+    });
+
+    return results;
   };
   
   postMessage({ e: 'index-ready' })
