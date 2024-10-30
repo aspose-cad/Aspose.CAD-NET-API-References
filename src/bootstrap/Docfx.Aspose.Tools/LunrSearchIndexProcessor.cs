@@ -20,9 +20,11 @@ public class LunrSearchIndexProcessor
 
     public int Process()
     {
-        _urlCustomizationProcessor.UpdateHrefsOnJson(Path.GetDirectoryName(_opts.Lunr));
-        _urlCustomizationProcessor.UpdateVersionTimestamp(Path.GetDirectoryName(_opts.Lunr));
-        _urlCustomizationProcessor.UpdateVersionOnIndex(Path.GetDirectoryName(_opts.Lunr));
+        var indexJson = Path.Combine(Path.GetDirectoryName(_opts.Lunr), "index.json");
+        
+        _urlCustomizationProcessor.UpdateHrefsOnJson(indexJson);
+        _urlCustomizationProcessor.UpdateVersionTimestamp(Path.GetDirectoryName(_opts.Lunr), ".html");
+        _urlCustomizationProcessor.UpdateVersionOnIndex(Path.GetDirectoryName(_opts.Lunr), ".html");
         
         return 0;
     }

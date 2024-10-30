@@ -24,6 +24,8 @@ if "%force%"=="--force" (
 	cd templates
 	call npm install
 	cd ..
+	
+	rmdir /S /Q ..\_site
 )
 
 cd ../scripts
@@ -32,16 +34,22 @@ cd ../src
 
 SET PLUGINS_DIR=templates\aspose-modern\plugins\
 
-dotnet nuget locals all --clear
-dotnet restore --no-cache
+if "%force%"=="--force" (
+  dotnet nuget locals all --clear
+  dotnet restore --no-cache
+)
+
+if NOT "%force%"=="--force" (
+  dotnet restore
+)
 
 dotnet build -c %CONFIGURATION% -f %FRAMEWORK%
-copy /Y Docfx.Boostrap\bin\%CONFIGURATION%\%FRAMEWORK%\Aspose.CAD.* %PLUGINS_DIR%
-copy /Y Docfx.Boostrap\bin\%CONFIGURATION%\%FRAMEWORK%\Docfx.Aspose.Plugins.* %PLUGINS_DIR%
-copy /Y Docfx.Boostrap\bin\%CONFIGURATION%\%FRAMEWORK%\LastModifiedPostProcessor.* %PLUGINS_DIR%
-copy /Y Docfx.Boostrap\bin\%CONFIGURATION%\%FRAMEWORK%\LibGit2Sharp.dll %PLUGINS_DIR%
-copy /Y Docfx.Boostrap\bin\%CONFIGURATION%\%FRAMEWORK%\HtmlAgilityPack.dll %PLUGINS_DIR%
-copy /Y Docfx.Boostrap\bin\%CONFIGURATION%\%FRAMEWORK%\runtimes\%RUNTIME%\native\* %PLUGINS_DIR%
+copy /Y bootstrap\Docfx.Boostrap\bin\%CONFIGURATION%\%FRAMEWORK%\Aspose.CAD.* %PLUGINS_DIR%
+copy /Y bootstrap\Docfx.Boostrap\bin\%CONFIGURATION%\%FRAMEWORK%\Docfx.Aspose.Plugins.* %PLUGINS_DIR%
+copy /Y bootstrap\Docfx.Boostrap\bin\%CONFIGURATION%\%FRAMEWORK%\LastModifiedPostProcessor.* %PLUGINS_DIR%
+copy /Y bootstrap\Docfx.Boostrap\bin\%CONFIGURATION%\%FRAMEWORK%\LibGit2Sharp.dll %PLUGINS_DIR%
+copy /Y bootstrap\Docfx.Boostrap\bin\%CONFIGURATION%\%FRAMEWORK%\HtmlAgilityPack.dll %PLUGINS_DIR%
+copy /Y bootstrap\Docfx.Boostrap\bin\%CONFIGURATION%\%FRAMEWORK%\runtimes\%RUNTIME%\native\* %PLUGINS_DIR%
 
 cd ../scripts
 CALL _docfx-metadata.bat %LOG_LEVEL%

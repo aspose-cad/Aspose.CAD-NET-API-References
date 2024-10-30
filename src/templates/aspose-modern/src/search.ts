@@ -107,10 +107,12 @@ export async function enableSearch() {
       const items = html`
         <div class="search-list">${loc('searchResultsCount', { count: hits.length.toString(), query })}</div>
         <div class="sr-items">${curHits.reduce((acc, hit) => {
-          if (!acc.nullIsLogged) {
+          if (!hit) {
+            if (!acc.nullIsLogged) {
               console.log("Null hit found for search " + window.lunrSearchQuery);
               acc.nullIsLogged = true;
-              return acc;
+            }
+            return acc;
           }
           const currentUrl = window.location.href
           const itemRawHref = relativeUrlToAbsoluteUrl(currentUrl, /*relHref +*/ hit.href)

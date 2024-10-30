@@ -15,13 +15,13 @@ namespace Docfx.Aspose.Plugins.Processors;
 public class UrlCustomizationProcessor : IPostProcessor
 {
     private static readonly Regex PackageVersionTemplateRegex = new Regex(
-        "__VERSION__", RegexOptions.Compiled);
+        "VER_S_ION", RegexOptions.Compiled);
     
     private static readonly Regex GitVersionTimestampRegex = new Regex(
         "API Reference Version\\: [a-zA-Z0-9]+", RegexOptions.Compiled);
     
     private static readonly Regex GitVersionTemplateRegex = new Regex(
-        "__GIT_COMMIT__", RegexOptions.Compiled);
+        "GIT_COM_MIT", RegexOptions.Compiled);
     
     private static readonly Regex HrefRelSuffixRegex = new Regex("^([\\./]+)", RegexOptions.Compiled);
 
@@ -64,9 +64,13 @@ public class UrlCustomizationProcessor : IPostProcessor
         Debugger.Launch();
 #endif
         
-        UpdateVersionTimestamp(outputFolder);
-        UpdateVersionOnIndex(outputFolder);
-        UpdateHrefsOnJson(outputFolder);
+        UpdateVersionTimestamp(outputFolder, ".html");
+        UpdateVersionTimestamp(outputFolder, ".md");
+        
+        UpdateVersionOnIndex(outputFolder, ".html");
+        UpdateVersionOnIndex(outputFolder, ".md");
+        
+        UpdateHrefsOnJson(Path.Combine(outputFolder, "index.json"));
 
         foreach (var manifestItem in manifest.Files)
         {
@@ -97,9 +101,14 @@ public class UrlCustomizationProcessor : IPostProcessor
         return manifest;
     }
     
-    public void UpdateVersionTimestamp(string outputFolder)
+    public void UpdateVersionTimestamp(string outputFolder, string extension)
     {
-        var indexFilePath = Path.Combine(outputFolder, "index.html");
+        var indexFilePath = Path.Combine(outputFolder, "index" + extension);
+        if (!File.Exists(indexFilePath))
+        {
+            return;
+        }
+        
         var html = File.ReadAllText(indexFilePath);
         
         var gitTag = GetGitCommit(outputFolder);
@@ -110,9 +119,14 @@ public class UrlCustomizationProcessor : IPostProcessor
         File.WriteAllText(indexFilePath, html);
     }
     
-    public void UpdateVersionOnIndex(string outputFolder)
+    public void UpdateVersionOnIndex(string outputFolder, string extension)
     {
-        var indexFilePath = Path.Combine(outputFolder, "index.html");
+        var indexFilePath = Path.Combine(outputFolder, "index" + extension);
+        if (!File.Exists(indexFilePath))
+        {
+            return;
+        }
+        
         var html = File.ReadAllText(indexFilePath);
         
         var packageVersion = typeof(Image).Assembly.GetName().Version!.ToString(2);
@@ -158,12 +172,11 @@ public class UrlCustomizationProcessor : IPostProcessor
         }
     }
     
-    public void UpdateHrefsOnJson(string outputFolder)
+    public void UpdateHrefsOnJson(string jsonFilePath)
     {
-        var jsonFilePath = Path.Combine(outputFolder, "index.json");
         var json = JsonConvert.DeserializeObject(File.ReadAllText(jsonFilePath)) as JToken;
 
-        TraverseTocHrefs(json, true);
+        TraverseTocOrIndexHrefs(json, true);
 
         File.WriteAllText(jsonFilePath, JsonConvert.SerializeObject(json, Formatting.Indented));
     }
@@ -338,7 +351,7 @@ public class UrlCustomizationProcessor : IPostProcessor
         return _settings.VirtualPath + href.TrimStart('/') + anchor;
     }
 
-    private void TraverseTocHrefs(JToken token, bool processRootPropertyNames)
+    private void TraverseTocOrIndexHrefs(JToken token, bool processRootPropertyNames)
     {
         if (token.Type == JTokenType.Object)
         {
@@ -370,14 +383,14 @@ public class UrlCustomizationProcessor : IPostProcessor
                     obj.Add(newName, value);
                 }
 
-                TraverseTocHrefs(property.Value, false);
+                TraverseTocOrIndexHrefs(property.Value, false);
             }
         }
         else if (token.Type == JTokenType.Array)
         {
             foreach (var item in (JArray)token)
             {
-                TraverseTocHrefs(item, false);
+                TraverseTocOrIndexHrefs(item, false);
             }
         }
     }
